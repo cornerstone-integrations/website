@@ -13,7 +13,7 @@ export function SocialProof() {
 
         <blockquote className="mt-12 rounded-2xl border border-gray-200 bg-gray-50 p-8 text-left shadow-soft">
           <p className="text-lg italic leading-relaxed text-slate">
-            "[Testimonial from first client]"
+            &ldquo;[Testimonial from first client]&rdquo;
           </p>
           <footer className="mt-6 text-sm font-semibold text-navy">Name, Title, Company</footer>
         </blockquote>

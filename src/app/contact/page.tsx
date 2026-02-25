@@ -20,9 +20,9 @@ export default function ContactPage() {
       <section id="booking" className="bg-navy py-20 text-white scroll-mt-28">
         <div className="mx-auto w-full max-w-6xl px-6">
           <p className="font-mono text-xs uppercase tracking-[0.18em] text-teal-accent">Contact</p>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Let's Talk</h1>
+          <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Let&apos;s Talk</h1>
           <p className="mt-5 max-w-3xl text-lg text-white/85">
-            Book a free 30-minute discovery call. We'll discuss your challenges and see if we can help.
+            Book a free 30-minute discovery call. We&apos;ll discuss your challenges and see if we can help.
           </p>
 
           <div className="mt-10">
