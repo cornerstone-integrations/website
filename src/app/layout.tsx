@@ -20,22 +20,22 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Cornerstone Systems | Integration & Custom Software',
-    template: '%s | Cornerstone Systems',
+    default: 'Cornerstone Integrations | Integration & Custom Software',
+    template: '%s | Cornerstone Integrations',
   },
   description: siteConfig.description,
   openGraph: {
-    title: 'Cornerstone Systems',
+    title: 'Cornerstone Integrations',
     description: siteConfig.description,
     url: siteConfig.url,
-    siteName: 'Cornerstone Systems',
+    siteName: 'Cornerstone Integrations',
     locale: 'en_US',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Cornerstone Systems' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Cornerstone Integrations' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cornerstone Systems',
+    title: 'Cornerstone Integrations',
     description: siteConfig.description,
     images: ['/og-image.png'],
   },

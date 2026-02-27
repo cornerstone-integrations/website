@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-charcoal text-white">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-12 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
-          <Image src="/logo-white.svg" alt="Cornerstone Systems" width={230} height={36} className="h-9 w-auto" />
+          <Image src="/logo-white.svg" alt="Cornerstone Integrations" width={230} height={36} className="h-9 w-auto" />
           <p className="mt-4 max-w-sm text-sm text-white/75">
             We help manufacturers and growing businesses connect systems, automate workflows, and build software that fits how they work.
           </p>

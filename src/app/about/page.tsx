@@ -5,11 +5,11 @@ import { Card } from '@/components/ui/Card';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Cornerstone Systems was founded in Lancaster, PA to help manufacturers and growing businesses solve disconnected systems and manual processes.',
+    'Cornerstone Integrations was founded in Lancaster, PA to help manufacturers and growing businesses solve disconnected systems and manual processes.',
   openGraph: {
-    title: 'About | Cornerstone Systems',
+    title: 'About | Cornerstone Integrations',
     description:
-      'Learn the story, approach, and Lancaster roots behind Cornerstone Systems.',
+      'Learn the story, approach, and Lancaster roots behind Cornerstone Integrations.',
     url: '/about',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
@@ -31,7 +31,7 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold tracking-tight text-navy">Our Story</h2>
             <div className="mt-5 space-y-4 text-slate">
               <p>
-                Cornerstone Systems was founded in Lancaster, Pennsylvania after years of hands-on experience building enterprise manufacturing integrations.
+                Cornerstone Integrations was founded in Lancaster, Pennsylvania after years of hands-on experience building enterprise manufacturing integrations.
               </p>
               <p>
                 We kept seeing the same pattern: strong businesses slowed down by disconnected software, brittle workflows, and too much manual reconciliation. Cornerstone exists to fix that.

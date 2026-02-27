@@ -8,9 +8,9 @@ import { siteConfig } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Home',
   description:
-    'Cornerstone Systems helps manufacturers and growing businesses connect systems, automate workflows, and build custom software.',
+    'Cornerstone Integrations helps manufacturers and growing businesses connect systems, automate workflows, and build custom software.',
   openGraph: {
-    title: 'Cornerstone Systems | Systems Integration & Custom Development',
+    title: 'Cornerstone Integrations | Systems Integration & Custom Development',
     description:
       'Stop losing time to disconnected systems. We help manufacturers connect platforms, automate operations, and build custom software.',
     url: '/',

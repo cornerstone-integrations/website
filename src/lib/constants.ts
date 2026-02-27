@@ -1,11 +1,11 @@
 export const siteConfig = {
-  name: 'Cornerstone Systems',
-  legalName: 'Cornerstone Systems LLC',
-  url: 'https://cornerstonesystems.dev',
+  name: 'Cornerstone Integrations',
+  legalName: 'Cornerstone Integrations LLC',
+  url: 'https://cornerstoneintegrations.com',
   description:
-    'Cornerstone Systems helps manufacturers and growing businesses connect systems, automate processes, and build custom software.',
+    'Cornerstone Integrations helps manufacturers and growing businesses connect systems, automate processes, and build custom software.',
   location: 'Lancaster, PA',
-  email: 'conner@cornerstonesystems.com',
+  email: 'conner@cornerstoneintegrations.com',
   phone: 'Phone coming soon',
 };
 

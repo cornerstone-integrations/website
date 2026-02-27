@@ -5,10 +5,10 @@ import { siteConfig } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Book a free discovery call or send a message to Cornerstone Systems.',
+  description: 'Book a free discovery call or send a message to Cornerstone Integrations.',
   openGraph: {
-    title: 'Contact | Cornerstone Systems',
-    description: 'Start a conversation with Cornerstone Systems about your integration or software needs.',
+    title: 'Contact | Cornerstone Integrations',
+    description: 'Start a conversation with Cornerstone Integrations about your integration or software needs.',
     url: '/contact',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },

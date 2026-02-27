@@ -7,9 +7,9 @@ export const metadata: Metadata = {
   description:
     'Systems integration, process automation, custom software, and strategic consulting for manufacturers and e-commerce businesses.',
   openGraph: {
-    title: 'Services | Cornerstone Systems',
+    title: 'Services | Cornerstone Integrations',
     description:
-      'Explore integration, automation, custom software development, and strategic consulting services from Cornerstone Systems.',
+      'Explore integration, automation, custom software development, and strategic consulting services from Cornerstone Integrations.',
     url: '/services',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },

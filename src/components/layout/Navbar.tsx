@@ -26,8 +26,8 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" aria-label="Cornerstone Systems home" className="shrink-0">
-          <Image src="/logo-white.svg" alt="Cornerstone Systems" width={210} height={32} className="h-8 w-auto" priority />
+        <Link href="/" aria-label="Cornerstone Integrations home" className="shrink-0">
+          <Image src="/logo-white.svg" alt="Cornerstone Integrations" width={210} height={32} className="h-8 w-auto" priority />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
