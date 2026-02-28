@@ -6,7 +6,9 @@ import { BottomCTA } from '@/components/home/BottomCTA';
 import { siteConfig } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: {
+    absolute: 'Cornerstone Integrations',
+  },
   description:
     'Cornerstone Integrations helps manufacturers and growing businesses connect systems, automate workflows, and build custom software.',
   openGraph: {
