@@ -1,7 +1,5 @@
 'use server';
 
-import { Resend } from 'resend';
-
 export type ContactFormState = {
   success: boolean;
   message: string;
@@ -65,6 +63,7 @@ export async function submitContactForm(_prevState: ContactFormState, formData: 
   }
 
   try {
+    const { Resend } = await import('resend');
     const resend = new Resend(resendApiKey);
     const { error } = await resend.emails.send({
       from: fromEmail,
