@@ -5,15 +5,8 @@ export type ContactFormState = {
   message: string;
 };
 
-const initialState: ContactFormState = {
-  success: false,
-  message: '',
-};
-
 const toEmail = process.env.CONTACT_EMAIL ?? 'conner@cornerstoneintegrations.com';
 const fromEmail = process.env.RESEND_FROM ?? 'noreply@cornerstoneintegrations.com';
-
-export { initialState };
 
 export async function submitContactForm(_prevState: ContactFormState, formData: FormData): Promise<ContactFormState> {
   const honeypot = formData.get('website');

@@ -1,7 +1,9 @@
 'use client';
 
 import { useActionState } from 'react';
-import { initialState, submitContactForm } from '@/app/contact/actions';
+import { submitContactForm, type ContactFormState } from '@/app/contact/actions';
+
+const initialState: ContactFormState = { success: false, message: '' };
 
 export function ContactForm() {
   const [state, formAction, pending] = useActionState(submitContactForm, initialState);
