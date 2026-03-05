@@ -12,9 +12,6 @@ const initialState: ContactFormState = {
   message: '',
 };
 
-const resendApiKey = process.env.RESEND_API_KEY;
-const resend = resendApiKey ? new Resend(resendApiKey) : null;
-
 const toEmail = process.env.CONTACT_EMAIL ?? 'conner@cornerstoneintegrations.com';
 const fromEmail = process.env.RESEND_FROM ?? 'noreply@cornerstoneintegrations.com';
 
@@ -59,7 +56,8 @@ export async function submitContactForm(_prevState: ContactFormState, formData: 
     submittedAt: new Date().toISOString(),
   });
 
-  if (!resend) {
+  const resendApiKey = process.env.RESEND_API_KEY;
+  if (!resendApiKey) {
     return {
       success: true,
       message: "Thanks! We'll get back to you within one business day.",
@@ -67,6 +65,7 @@ export async function submitContactForm(_prevState: ContactFormState, formData: 
   }
 
   try {
+    const resend = new Resend(resendApiKey);
     const { error } = await resend.emails.send({
       from: fromEmail,
       to: toEmail,
