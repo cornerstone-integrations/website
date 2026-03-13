@@ -87,14 +87,18 @@ export async function submitContactForm(_prevState: ContactFormState, formData: 
     return { success: false, message: 'Something went wrong. Please email us directly at conner@cornerstoneintegrations.com.' };
   }
 
-  // Fire-and-forget to n8n webhook (non-blocking — form works even if n8n is down)
+  // Send to n8n webhook (awaited but failure doesn't block the user response)
   const n8nWebhook = process.env.N8N_WEBHOOK_URL;
   if (n8nWebhook) {
-    fetch(n8nWebhook, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, company, phone, message, submittedAt: new Date().toISOString() }),
-    }).catch(() => {});
+    try {
+      await fetch(n8nWebhook, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, company, phone, message, submittedAt: new Date().toISOString() }),
+      });
+    } catch {
+      // n8n down — no-op, Resend email already sent
+    }
   }
 
   return {
