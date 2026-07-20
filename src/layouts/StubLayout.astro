@@ -1,0 +1,32 @@
+---
+// Placeholder page: renders the confirmed title/URL/nav slot from the site map, plus a
+// short draft intro where we have it, and a clear in-development notice so it's obvious
+// to Google (noindex) and to Cornerstone (visually) that final approved copy hasn't been
+// dropped in yet. Swap to PageLayout once a page-build doc exists for this page.
+import BaseLayout from './BaseLayout.astro';
+import Button from '@/components/Button.astro';
+
+interface Props {
+  title: string;
+  seoTitle: string;
+  metaDescription: string;
+  intro?: string;
+}
+
+const { title, seoTitle, metaDescription, intro } = Astro.props;
+---
+
+<BaseLayout seoTitle={seoTitle} metaDescription={metaDescription} noindex>
+  <section class="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
+    <p class="text-sm font-semibold uppercase tracking-wide text-accent">In Development</p>
+    <h1 class="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl">{title}</h1>
+    {intro && <p class="mt-6 text-base leading-relaxed text-stone-600">{intro}</p>}
+    <p class="mt-6 text-sm text-stone-500">
+      This page is part of the approved site structure. Final copy is pending and will replace this placeholder.
+    </p>
+    <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <Button href="/contact/">Schedule a Free Consultation</Button>
+      <Button href="/services/" variant="ghost">Explore Our Services</Button>
+    </div>
+  </section>
+</BaseLayout>

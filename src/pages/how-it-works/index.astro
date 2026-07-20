@@ -1,0 +1,48 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ContentSection from '@/components/sections/ContentSection.astro';
+import FinalCta from '@/components/sections/FinalCta.astro';
+
+const steps = [
+  {
+    heading: 'Start With a Free Consultation',
+    body: 'Understand the business challenge, goal, current systems, and desired outcome.',
+  },
+  {
+    heading: 'Define the Right Solution',
+    body: 'Evaluate available options and create a practical plan based on business value, scalability, and implementation priorities.',
+  },
+  {
+    heading: 'Implement the Solution',
+    body: 'Connect systems, automate workflows, introduce AI where it creates value, and support rollout.',
+  },
+  {
+    heading: 'Ongoing Support as Needed',
+    body: 'Provide continued support, refinements, and additional integrations when needed.',
+  },
+];
+---
+
+<BaseLayout
+  seoTitle="How It Works: Our Engagement Process | Cornerstone"
+  metaDescription="See how Cornerstone Strategy & Integrations moves from a free consultation to a defined plan, direct implementation, and ongoing support."
+>
+  <section class="bg-surface-muted py-16 sm:py-20">
+    <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">How It Works</h1>
+      <p class="mt-6 text-base leading-relaxed text-stone-600 sm:text-lg">
+        Working with Cornerstone is simple, structured, and low-risk — from your first conversation through
+        implementation and ongoing support.
+      </p>
+    </div>
+  </section>
+
+  <ContentSection heading="Our Process" layout="steps" items={steps} />
+
+  <FinalCta
+    heading="Ready to Get Started?"
+    body="Schedule a free consultation to discuss your business challenge, current systems, and desired outcome."
+    primaryCta={{ text: 'Schedule a Free Consultation', link: '/contact/' }}
+    secondaryCta={{ text: 'Explore All Services', link: '/services/' }}
+  />
+</BaseLayout>

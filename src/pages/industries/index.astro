@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Button from '@/components/Button.astro';
+import FinalCta from '@/components/sections/FinalCta.astro';
+
+const industries = await getCollection('industries');
+---
+
+<BaseLayout
+  seoTitle="Industries We Serve: AI, Automation & Systems Integration | Cornerstone"
+  metaDescription="Cornerstone Strategy & Integrations provides AI, automation, and systems integration services across distribution, e-commerce, logistics, manufacturing, and professional services."
+>
+  <section class="bg-surface-muted py-16 sm:py-20">
+    <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">Industries</h1>
+      <p class="mt-6 text-base leading-relaxed text-stone-600 sm:text-lg">
+        Cornerstone works with businesses across a range of industries. Here's how our services apply in real
+        operating environments.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white py-14 sm:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          industries.map((industry) => (
+            <div class="flex flex-col rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
+              <h2 class="text-lg font-semibold text-primary">{industry.data.navLabel}</h2>
+              <p class="mt-2 flex-1 text-sm leading-relaxed text-stone-600">{industry.data.summary}</p>
+              <Button href={`/industries/${industry.id}/`} variant="ghost" class="mt-4 self-start">
+                Learn More
+              </Button>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <FinalCta
+    heading="Don't See Your Industry?"
+    body="Cornerstone works with businesses across many industries. Schedule a free consultation to discuss your specific operations."
+    primaryCta={{ text: 'Schedule a Free Consultation', link: '/contact/' }}
+    secondaryCta={{ text: 'Explore All Services', link: '/services/' }}
+  />
+</BaseLayout>

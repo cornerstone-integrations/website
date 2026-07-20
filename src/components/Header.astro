@@ -1,0 +1,99 @@
+---
+import { primaryNav } from '@/lib/navigation';
+import Button from './Button.astro';
+---
+
+<header class="sticky top-0 z-50 border-b border-stone-200 bg-white/95 backdrop-blur">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+    <a href="/" class="flex shrink-0 items-center">
+      <img src="/images/logo.png" alt="Cornerstone Strategy & Integrations" class="h-9 w-auto sm:h-10" />
+    </a>
+
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary">
+      {
+        primaryNav.map((item) => (
+          <div class="group relative">
+            <a
+              href={item.href}
+              class="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-primary hover:bg-surface-muted"
+            >
+              {item.label}
+              {item.children && (
+                <svg class="h-3.5 w-3.5 text-stone-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              )}
+            </a>
+            {item.children && (
+              <div class="invisible absolute left-0 top-full z-50 w-72 rounded-lg border border-stone-200 bg-white py-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:opacity-100">
+                {item.children.map((child) => (
+                  <a href={child.href} class="block px-4 py-2 text-sm text-primary hover:bg-surface-muted">
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </nav>
+
+    <div class="hidden shrink-0 lg:block">
+      <Button href="/contact/" class="whitespace-nowrap">Schedule a Free Consultation</Button>
+    </div>
+
+    <button
+      id="mobile-menu-button"
+      type="button"
+      class="inline-flex items-center justify-center rounded-md p-2 text-primary lg:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden border-t border-stone-200 lg:hidden">
+    <nav class="space-y-1 px-4 py-3" aria-label="Mobile">
+      {
+        primaryNav.map((item) => (
+          <details class="group">
+            <summary class="flex cursor-pointer list-none items-center justify-between rounded-md px-2 py-2 text-sm font-medium text-primary hover:bg-surface-muted">
+              <a href={item.href}>{item.label}</a>
+              {item.children && <span class="text-stone-400 group-open:rotate-180 transition-transform">▾</span>}
+            </summary>
+            {item.children && (
+              <div class="ml-3 space-y-1 border-l border-stone-200 pl-3">
+                {item.children.map((child) => (
+                  <a href={child.href} class="block rounded-md px-2 py-1.5 text-sm text-stone-600 hover:bg-surface-muted">
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </details>
+        ))
+      }
+      <div class="pt-2">
+        <Button href="/contact/" class="w-full">Schedule a Free Consultation</Button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  button?.addEventListener('click', () => {
+    const isOpen = menu?.classList.contains('hidden') === false;
+    menu?.classList.toggle('hidden');
+    button.setAttribute('aria-expanded', String(!isOpen));
+  });
+</script>

@@ -1,0 +1,41 @@
+---
+import Button from '@/components/Button.astro';
+
+interface Props {
+  title: string;
+  paragraphs: string[];
+  imageAlt: string;
+  cta: { text: string; link: string };
+}
+
+const { title, paragraphs, imageAlt, cta } = Astro.props;
+---
+
+<section class="relative overflow-hidden bg-surface-muted">
+  <div class="mx-auto grid max-w-7xl gap-10 px-4 py-10 sm:px-6 sm:py-14 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-16">
+    <div>
+      <h1 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl lg:text-5xl">{title}</h1>
+      <div class="mt-6 space-y-4 text-base leading-relaxed text-stone-600 sm:text-lg">
+        {paragraphs.map((p) => <p>{p}</p>)}
+      </div>
+      <div class="mt-8">
+        <Button href={cta.link}>{cta.text}</Button>
+      </div>
+    </div>
+    <div class="relative hidden aspect-[4/3] items-center justify-center rounded-2xl bg-primary lg:flex" role="img" aria-label={imageAlt}>
+      <div class="hero-grid absolute inset-0 rounded-2xl opacity-30"></div>
+      <div class="relative flex h-24 w-24 items-center justify-center rounded-full bg-accent shadow-lg">
+        <img src="/images/logo.png" alt="" class="h-10 w-auto brightness-0 invert" aria-hidden="true" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-grid {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+</style>

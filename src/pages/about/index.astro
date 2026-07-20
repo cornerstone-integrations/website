@@ -1,0 +1,62 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FinalCta from '@/components/sections/FinalCta.astro';
+import Button from '@/components/Button.astro';
+
+const differentiators = [
+  'Strategy and implementation in one place.',
+  'Practical AI implementation focused on business outcomes.',
+  'Ability to connect multiple SaaS platforms and databases through API integrations.',
+  'Focus on scalable systems, productivity, and reduced administrative burden.',
+  'Hands-on support after the initial solution is defined.',
+];
+---
+
+<BaseLayout
+  seoTitle="About Cornerstone Strategy & Integrations"
+  metaDescription="Cornerstone Strategy & Integrations is a national technology strategy, systems integration, and AI implementation provider headquartered in Lancaster, Pennsylvania."
+  noindex
+>
+  <section class="bg-surface-muted py-16 sm:py-20">
+    <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+      <p class="text-sm font-semibold uppercase tracking-wide text-accent">In Development</p>
+      <h1 class="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl">About Cornerstone</h1>
+      <p class="mt-6 text-base leading-relaxed text-stone-600 sm:text-lg">
+        Cornerstone Strategy & Integrations LLC is a national provider headquartered in Lancaster, Pennsylvania, and
+        both a strategic consulting partner and a hands-on implementation provider. Full company copy is pending —
+        the differentiators below are confirmed from the approved site strategy.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white py-14 sm:py-16">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-center text-2xl font-bold tracking-tight text-primary">What Sets Cornerstone Apart</h2>
+      <ul class="mx-auto mt-8 max-w-2xl space-y-3">
+        {
+          differentiators.map((item) => (
+            <li class="flex items-start gap-3 rounded-lg bg-surface-muted px-4 py-3">
+              <svg class="mt-0.5 h-5 w-5 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span class="text-sm text-stone-700 sm:text-base">{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="mt-8 text-center">
+        <Button href="/services/" variant="ghost">Explore Our Services</Button>
+      </div>
+    </div>
+  </section>
+
+  <FinalCta
+    heading="Talk to Cornerstone"
+    body="Schedule a free consultation to discuss your business challenge, current systems, and desired outcome."
+    primaryCta={{ text: 'Schedule a Free Consultation', link: '/contact/' }}
+  />
+</BaseLayout>

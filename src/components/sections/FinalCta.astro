@@ -1,0 +1,29 @@
+---
+import Button from '@/components/Button.astro';
+
+interface Props {
+  heading: string;
+  body: string;
+  primaryCta: { text: string; link: string };
+  secondaryCta?: { text: string; link: string };
+}
+
+const { heading, body, primaryCta, secondaryCta } = Astro.props;
+---
+
+<section class="bg-primary">
+  <div class="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 lg:px-8">
+    <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">{heading}</h2>
+    <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-stone-200">{body}</p>
+    <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <Button href={primaryCta.link}>{primaryCta.text}</Button>
+      {
+        secondaryCta && (
+          <Button href={secondaryCta.link} variant="ghost" class="!border-white !text-white hover:!bg-white hover:!text-primary">
+            {secondaryCta.text}
+          </Button>
+        )
+      }
+    </div>
+  </div>
+</section>

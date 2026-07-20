@@ -1,0 +1,65 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Hero from '@/components/sections/Hero.astro';
+import ContentSection from '@/components/sections/ContentSection.astro';
+import FinalCta from '@/components/sections/FinalCta.astro';
+
+interface Section {
+  heading: string;
+  intro?: string;
+  layout?: 'checklist' | 'cards' | 'steps' | 'grid';
+  items: { heading: string; body: string }[];
+}
+
+interface Props {
+  title: string;
+  seoTitle: string;
+  metaDescription: string;
+  heroImageAlt: string;
+  heroParagraphs: string[];
+  heroCta: { text: string; link: string };
+  sections: Section[];
+  finalCtaHeading: string;
+  finalCtaBody: string;
+  primaryCta: { text: string; link: string };
+  secondaryCta?: { text: string; link: string };
+  structuredData?: Record<string, unknown>[];
+}
+
+const {
+  title,
+  seoTitle,
+  metaDescription,
+  heroImageAlt,
+  heroParagraphs,
+  heroCta,
+  sections,
+  finalCtaHeading,
+  finalCtaBody,
+  primaryCta,
+  secondaryCta,
+  structuredData,
+} = Astro.props;
+---
+
+<BaseLayout seoTitle={seoTitle} metaDescription={metaDescription} structuredData={structuredData}>
+  <Hero title={title} paragraphs={heroParagraphs} imageAlt={heroImageAlt} cta={heroCta} />
+
+  <slot name="before-sections" />
+
+  {
+    sections.map((section, i) => (
+      <ContentSection
+        heading={section.heading}
+        intro={section.intro}
+        layout={section.layout}
+        items={section.items}
+        tone={i % 2 === 0 ? 'default' : 'muted'}
+      />
+    ))
+  }
+
+  <slot name="before-cta" />
+
+  <FinalCta heading={finalCtaHeading} body={finalCtaBody} primaryCta={primaryCta} secondaryCta={secondaryCta} />
+</BaseLayout>
