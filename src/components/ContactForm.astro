@@ -5,40 +5,40 @@
   <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
     <div>
       <label for="name" class="block text-sm font-medium text-primary">Name *</label>
-      <input type="text" id="name" name="name" required class="mt-1.5 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
+      <input type="text" id="name" name="name" required class="mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
     </div>
     <div>
       <label for="company" class="block text-sm font-medium text-primary">Company</label>
-      <input type="text" id="company" name="company" class="mt-1.5 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
+      <input type="text" id="company" name="company" class="mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
     </div>
     <div>
       <label for="email" class="block text-sm font-medium text-primary">Email *</label>
-      <input type="email" id="email" name="email" required class="mt-1.5 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
+      <input type="email" id="email" name="email" required class="mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
     </div>
     <div>
       <label for="phone" class="block text-sm font-medium text-primary">Phone</label>
-      <input type="tel" id="phone" name="phone" class="mt-1.5 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
+      <input type="tel" id="phone" name="phone" class="mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
     </div>
   </div>
 
   <div>
     <label for="companyWebsite" class="block text-sm font-medium text-primary">Company Website</label>
-    <input type="text" id="companyWebsite" name="companyWebsite" class="mt-1.5 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
+    <input type="text" id="companyWebsite" name="companyWebsite" class="mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
   </div>
 
   <div>
     <label for="goal" class="block text-sm font-medium text-primary">Brief Description of the Problem or Goal *</label>
-    <textarea id="goal" name="goal" rows="4" required class="mt-1.5 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"></textarea>
+    <textarea id="goal" name="goal" rows="4" required class="mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"></textarea>
   </div>
 
   <div>
     <label for="systemsUsed" class="block text-sm font-medium text-primary">Systems Currently Used</label>
-    <textarea id="systemsUsed" name="systemsUsed" rows="2" class="mt-1.5 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"></textarea>
+    <textarea id="systemsUsed" name="systemsUsed" rows="2" class="mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"></textarea>
   </div>
 
   <div>
     <label for="nextStep" class="block text-sm font-medium text-primary">Preferred Next Step</label>
-    <input type="text" id="nextStep" name="nextStep" placeholder="e.g. Call me this week, send more information, etc." class="mt-1.5 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
+    <input type="text" id="nextStep" name="nextStep" placeholder="e.g. Call me this week, send more information, etc." class="mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
   </div>
 
   <!-- Honeypot: hidden from real visitors, bots tend to fill every field they see. -->
@@ -68,7 +68,7 @@
     const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
     submitButton?.setAttribute('disabled', 'true');
     status.textContent = 'Sending...';
-    status.className = 'text-sm text-slate-500';
+    status.className = 'text-sm text-stone-500';
 
     try {
       const response = await fetch('/api/contact', { method: 'POST', body: new FormData(form) });

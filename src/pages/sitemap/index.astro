@@ -28,7 +28,7 @@ const industries = await getCollection('industries');
                 ?.filter((c) => c.href !== item.href)
                 .map((child) => (
                   <li>
-                    <a href={child.href} class="text-sm text-slate-600 hover:text-accent">
+                    <a href={child.href} class="text-sm text-stone-600 hover:text-accent">
                       {child.label}
                     </a>
                   </li>
@@ -36,7 +36,7 @@ const industries = await getCollection('industries');
               {item.label === 'Solutions' &&
                 solutions.map((s) => (
                   <li>
-                    <a href={`/solutions/${s.id}/`} class="text-sm text-slate-600 hover:text-accent">
+                    <a href={`/solutions/${s.id}/`} class="text-sm text-stone-600 hover:text-accent">
                       {s.data.navLabel}
                     </a>
                   </li>
@@ -44,7 +44,7 @@ const industries = await getCollection('industries');
               {item.label === 'Industries' &&
                 industries.map((ind) => (
                   <li>
-                    <a href={`/industries/${ind.id}/`} class="text-sm text-slate-600 hover:text-accent">
+                    <a href={`/industries/${ind.id}/`} class="text-sm text-stone-600 hover:text-accent">
                       {ind.data.navLabel}
                     </a>
                   </li>
@@ -62,7 +62,7 @@ const industries = await getCollection('industries');
           {
             footerNav.map((link) => (
               <li>
-                <a href={link.href} class="text-sm text-slate-600 hover:text-accent">
+                <a href={link.href} class="text-sm text-stone-600 hover:text-accent">
                   {link.label}
                 </a>
               </li>

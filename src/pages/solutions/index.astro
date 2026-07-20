@@ -14,7 +14,7 @@ const solutions = await getCollection('solutions');
   <section class="bg-surface-muted py-16 sm:py-20">
     <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
       <h1 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">Solutions</h1>
-      <p class="mt-6 text-base leading-relaxed text-slate-600 sm:text-lg">
+      <p class="mt-6 text-base leading-relaxed text-stone-600 sm:text-lg">
         A solution page explains the problem you're trying to solve, not the name of a technical service. Explore the
         common operational challenges Cornerstone helps businesses work through.
       </p>
@@ -26,9 +26,9 @@ const solutions = await getCollection('solutions');
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
           solutions.map((solution) => (
-            <div class="flex flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div class="flex flex-col rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
               <h2 class="text-lg font-semibold text-primary">{solution.data.navLabel}</h2>
-              <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{solution.data.summary}</p>
+              <p class="mt-2 flex-1 text-sm leading-relaxed text-stone-600">{solution.data.summary}</p>
               <Button href={`/solutions/${solution.id}/`} variant="ghost" class="mt-4 self-start">
                 Learn More
               </Button>

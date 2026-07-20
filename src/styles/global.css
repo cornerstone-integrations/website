@@ -13,7 +13,7 @@
   --color-accent: 182 84 41; /* rust orange #b65429 */
   --color-accent-dark: 150 68 33; /* darker rust for hover */
   --color-surface: 255 255 255;
-  --color-surface-muted: 248 250 252; /* slate-50 */
+  --color-surface-muted: 245 241 236; /* warm sand #f5f1ec — section backgrounds */
 }
 
 * {
