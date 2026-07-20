@@ -1,0 +1,109 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/sections/Hero.astro';
+import ContentSection from '@/components/sections/ContentSection.astro';
+import FinalCta from '@/components/sections/FinalCta.astro';
+import Button from '@/components/Button.astro';
+
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+
+const buyerSituations = [
+  'Employees spend too much time on repetitive administrative work.',
+  'Labor costs are increasing because manual tasks have not been automated.',
+  'Leadership wants to use AI but does not know where it will create measurable value.',
+  'Multiple SaaS platforms, databases, and software tools do not communicate with each other.',
+  'Employees repeatedly move data between systems or reconcile duplicate records.',
+  'Routine reporting, document processing, and analysis take too long.',
+  'The business has a known operational problem but does not know the right technology solution.',
+  'Customers need API connections, but internal IT and sales teams need an integration partner to manage onboarding efficiently.',
+];
+
+const steps = [
+  { heading: 'Start With a Free Consultation', body: 'Understand the business challenge, goal, current systems, and desired outcome.' },
+  { heading: 'Define the Right Solution', body: 'Evaluate available options and create a practical plan based on business value, scalability, and implementation priorities.' },
+  { heading: 'Implement the Solution', body: 'Connect systems, automate workflows, introduce AI where it creates value, and support rollout.' },
+  { heading: 'Ongoing Support as Needed', body: 'Provide continued support, refinements, and additional integrations when needed.' },
+];
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Cornerstone Strategy & Integrations',
+  url: 'https://www.cornerstoneintegrations.com',
+  logo: 'https://www.cornerstoneintegrations.com/images/logo.png',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Lancaster',
+    addressRegion: 'PA',
+    addressCountry: 'US',
+  },
+};
+---
+
+<BaseLayout
+  seoTitle="AI, Automation & Systems Integration for Business | Cornerstone"
+  metaDescription="Cornerstone Strategy & Integrations helps businesses build scalable operations with AI, automation, and systems integration — from strategy through direct implementation."
+  structuredData={[organizationSchema]}
+>
+  <Hero
+    title="Build Scalable Operations With AI, Automation, and Integrations"
+    imageAlt="AI, automation, and systems integration connecting business operations"
+    cta={{ text: 'Schedule a Free Consultation', link: '/contact/' }}
+    paragraphs={[
+      'Cornerstone helps businesses use AI, automation, and integrations to build scalable operations. We help identify the right opportunities, create a practical roadmap, and directly implement the solutions.',
+      'We provide both technology consulting and hands-on implementation — whether you know exactly what needs to be connected or automated, or only know that your current process is not working.',
+    ]}
+  />
+
+  <section class="bg-white py-14 sm:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl">Four Ways We Help Your Business Scale</h2>
+      </div>
+      <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+        {
+          services.map((service) => (
+            <div class="flex flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 class="text-lg font-semibold text-primary">{service.data.navLabel}</h3>
+              <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{service.data.summary}</p>
+              <Button href={`/services/${service.id}/`} variant="ghost" class="mt-4 self-start">
+                Explore {service.data.navLabel}
+              </Button>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <ContentSection
+    heading="Common Problems Cornerstone Solves"
+    intro="If you're a business owner, executive, operations leader, department manager, or technology leader, one or more of these will sound familiar:"
+    layout="checklist"
+    items={buyerSituations.map((s) => ({ heading: s, body: '' }))}
+    tone="muted"
+  />
+
+  <ContentSection heading="How It Works" layout="steps" items={steps} />
+
+  <section class="bg-surface-muted py-14 text-center sm:py-16">
+    <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl">A National Provider Headquartered in Lancaster, PA</h2>
+      <p class="mt-4 text-base leading-relaxed text-slate-600">
+        Cornerstone Strategy & Integrations LLC is headquartered in Lancaster, Pennsylvania, and serves businesses
+        nationwide as both a strategic consulting partner and a hands-on implementation provider.
+      </p>
+      <div class="mt-6">
+        <Button href="/resources/case-studies/" variant="ghost">View Case Studies and Examples</Button>
+      </div>
+    </div>
+  </section>
+
+  <FinalCta
+    heading="Find the Right Technology Solution for Your Business"
+    body="Whether you need to connect systems, automate workflows, implement AI, simplify customer API connections, or define a broader technology roadmap, Cornerstone can help."
+    primaryCta={{ text: 'Schedule a Free Consultation', link: '/contact/' }}
+    secondaryCta={{ text: 'Learn More About How We Work', link: '/how-it-works/' }}
+  />
+</BaseLayout>

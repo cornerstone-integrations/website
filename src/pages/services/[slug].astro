@@ -1,0 +1,33 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import PageLayout from '@/layouts/PageLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('services');
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'services'>;
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+---
+
+<PageLayout
+  title={data.title}
+  seoTitle={data.seoTitle}
+  metaDescription={data.metaDescription}
+  heroImageAlt={data.heroImageAlt}
+  heroParagraphs={data.heroParagraphs}
+  heroCta={data.heroCta}
+  sections={data.sections}
+  finalCtaHeading={data.finalCtaHeading}
+  finalCtaBody={data.finalCtaBody}
+  primaryCta={data.primaryCta}
+  secondaryCta={data.secondaryCta}
+/>

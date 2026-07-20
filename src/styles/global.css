@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Brand color tokens. Values are "R G B" triples (no commas) so Tailwind's
+  rgb(var(--x) / <alpha-value>) pattern can apply opacity modifiers like bg-primary/10.
+  To rebrand the site, change the values here — nothing else needs to change.
+*/
+:root {
+  --color-primary: 45 58 71; /* navy #2d3a47 */
+  --color-primary-dark: 26 34 42; /* darker navy for hover/headers */
+  --color-accent: 182 84 41; /* rust orange #b65429 */
+  --color-accent-dark: 150 68 33; /* darker rust for hover */
+  --color-surface: 255 255 255;
+  --color-surface-muted: 248 250 252; /* slate-50 */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: rgb(var(--color-primary));
+  background: rgb(var(--color-surface));
+  text-rendering: optimizeLegibility;
+}

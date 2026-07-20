@@ -1,0 +1,45 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import '@/styles/global.css';
+
+interface Props {
+  seoTitle: string;
+  metaDescription: string;
+  /** JSON-LD structured data objects to inject, e.g. Organization on the homepage. */
+  structuredData?: Record<string, unknown>[];
+  /** Set true for placeholder pages that shouldn't be indexed until final copy lands. */
+  noindex?: boolean;
+}
+
+const { seoTitle, metaDescription, structuredData = [], noindex = false } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <title>{seoTitle}</title>
+    <meta name="description" content={metaDescription} />
+    <link rel="canonical" href={canonicalURL} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={seoTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    {structuredData.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} is:inline />)}
+  </head>
+  <body class="flex min-h-screen flex-col antialiased">
+    <Header />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
