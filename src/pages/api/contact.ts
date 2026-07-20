@@ -67,14 +67,14 @@ export const POST: APIRoute = async ({ request }) => {
       if (error) {
         console.error('Resend error:', error);
         return json(
-          { success: false, message: 'Something went wrong. Please email us directly at conner@cornerstoneintegrations.com.' },
+          { success: false, message: 'Something went wrong. Please try again in a moment.' },
           502,
         );
       }
     } catch (err) {
       console.error('Resend threw:', err);
       return json(
-        { success: false, message: 'Something went wrong. Please email us directly at conner@cornerstoneintegrations.com.' },
+        { success: false, message: 'Something went wrong. Please try again in a moment.' },
         502,
       );
     }
