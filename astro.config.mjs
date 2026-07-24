@@ -8,4 +8,12 @@ export default defineConfig({
   output: 'static',
   adapter: vercel(),
   integrations: [tailwind(), sitemap()],
+  security: {
+    allowedDomains: [
+      { hostname: 'cornerstoneintegrations.com' },
+      { hostname: 'www.cornerstoneintegrations.com' },
+      { hostname: 'staging.cornerstoneintegrations.com' },
+      { hostname: '**.vercel.app' },
+    ],
+  },
 });
