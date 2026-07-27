@@ -90,8 +90,8 @@ export const POST: APIRoute = async ({ request }) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(fields),
       });
-    } catch {
-      // n8n down — no-op, Resend email already sent (or logged).
+    } catch (err) {
+      console.error('n8n webhook failed:', err);
     }
   }
 
