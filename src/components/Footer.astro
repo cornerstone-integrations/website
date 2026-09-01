@@ -4,14 +4,14 @@ import { primaryNav, footerNav } from '@/lib/navigation';
 const currentYear = new Date().getFullYear();
 // Only categories with a dropdown become their own column; single-link items
 // (How It Works, About) live inline under the brand blurb instead, so the
-// grid stays at logo + 4 columns and never wraps to a second row.
+// grid stays at logo + 3 columns and never wraps to a second row.
 const navColumns = primaryNav.filter((item) => item.children && item.children.length > 0);
 const singleLinks = primaryNav.filter((item) => item.label !== 'Home' && !item.children);
 ---
 
 <footer class="border-t border-white/10 bg-primary-dark text-white">
   <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
+    <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-4">
       <div class="col-span-2 sm:col-span-3 lg:col-span-1">
         <img src="/images/logo.png" alt="Cornerstone Strategy & Integrations" class="h-9 w-auto brightness-0 invert" />
         <p class="mt-4 text-sm text-stone-300">

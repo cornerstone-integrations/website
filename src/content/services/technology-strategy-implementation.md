@@ -4,7 +4,8 @@ seoTitle: "Technology Strategy Consulting & Implementation Services | Cornerston
 metaDescription: "Get technology strategy consulting, implementation planning, AI strategy, automation roadmaps, and business systems guidance from Cornerstone."
 heroImageAlt: "Technology strategy roadmap for business systems, AI implementation, automation, and software integration"
 navLabel: "Technology Strategy and Implementation"
-summary: "Evaluate your current systems, workflows, and business goals to identify the best technology path forward, then implement it directly."
+summary: "Have a business or operational problem you know needs to be solved, but you are not sure which technology solution is right? Cornerstone helps evaluate systems, workflows, and business goals, then creates a practical roadmap and supports direct implementation."
+cardCtaText: "Explore Technology Strategy and Implementation Services"
 order: 3
 
 heroParagraphs:
@@ -19,25 +20,22 @@ heroCta:
 
 sections:
   - heading: "When Technology Decisions Need a Clearer Strategy"
-    intro: "Many businesses know they have a technology problem, but they are not sure what solution they actually need. Common problems include:"
+    intro:
+      - "Many businesses know they have a technology problem, but they are not sure what solution they actually need."
     layout: checklist
-    items:
-      - heading: "You know a process is inefficient, but you are not sure whether it needs AI, automation, integration, new software, or process redesign."
-        body: ""
-      - heading: "Technology projects are happening without a larger roadmap."
-        body: ""
-      - heading: "Leadership wants to use AI but needs help identifying practical applications."
-        body: ""
-      - heading: "Software tools have been added over time without a clear integration plan."
-        body: ""
-      - heading: "Internal teams keep discussing technology problems without reaching a defined solution."
-        body: ""
-      - heading: "You need someone who can understand both the technical options and the business impact."
-        body: ""
-      - heading: "Technology priorities are unclear, making it difficult to decide which projects should move forward first."
-        body: ""
+    bulletsIntro: "Common problems include:"
+    bullets:
+      - "You know a process is inefficient, but you are not sure whether it needs AI, automation, integration, new software, or process redesign."
+      - "Technology projects are happening without a larger roadmap."
+      - "Leadership wants to use AI but needs help identifying practical applications."
+      - "Software tools have been added over time without a clear integration plan."
+      - "Internal teams keep discussing technology problems without reaching a defined solution."
+      - "You need someone who can understand both the technical options and the business impact."
+      - "Technology priorities are unclear, making it difficult to decide which projects should move forward first."
+
   - heading: "Understand the Systems Before Building the Solution"
-    intro: "Before recommending AI, automation, integration, or new software, Cornerstone starts by understanding how your business currently operates. This allows the strategy to be based on real business needs instead of disconnected technology ideas."
+    intro:
+      - "Before recommending AI, automation, integration, or new software, Cornerstone starts by understanding how your business currently operates. This allows the strategy to be based on real business needs instead of disconnected technology ideas."
     layout: steps
     items:
       - heading: "Business and Systems Review"

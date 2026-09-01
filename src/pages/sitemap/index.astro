@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { primaryNav, footerNav } from '@/lib/navigation';
 
-const solutions = await getCollection('solutions');
 const industries = await getCollection('industries');
 ---
 
@@ -30,14 +29,6 @@ const industries = await getCollection('industries');
                   <li>
                     <a href={child.href} class="text-sm text-stone-600 hover:text-accent">
                       {child.label}
-                    </a>
-                  </li>
-                ))}
-              {item.label === 'Solutions' &&
-                solutions.map((s) => (
-                  <li>
-                    <a href={`/solutions/${s.id}/`} class="text-sm text-stone-600 hover:text-accent">
-                      {s.data.navLabel}
                     </a>
                   </li>
                 ))}

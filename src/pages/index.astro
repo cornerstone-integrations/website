@@ -68,7 +68,7 @@ const organizationSchema = {
               <h3 class="text-lg font-semibold text-primary">{service.data.navLabel}</h3>
               <p class="mt-2 flex-1 text-sm leading-relaxed text-stone-600">{service.data.summary}</p>
               <Button href={`/services/${service.id}/`} variant="ghost" class="mt-4 self-start">
-                Explore {service.data.navLabel}
+                {service.data.cardCtaText ?? `Explore ${service.data.navLabel}`}
               </Button>
             </div>
           ))
@@ -79,9 +79,11 @@ const organizationSchema = {
 
   <ContentSection
     heading="Common Problems Cornerstone Solves"
-    intro="If you're a business owner, executive, operations leader, department manager, or technology leader, one or more of these will sound familiar:"
+    intro={[
+      "If you're a business owner, executive, operations leader, department manager, or technology leader, one or more of these will sound familiar:",
+    ]}
     layout="checklist"
-    items={buyerSituations.map((s) => ({ heading: s, body: '' }))}
+    bullets={buyerSituations}
     tone="muted"
   />
 

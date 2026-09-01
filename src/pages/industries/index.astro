@@ -1,36 +1,88 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import Button from '@/components/Button.astro';
+import Hero from '@/components/sections/Hero.astro';
+import ContentSection from '@/components/sections/ContentSection.astro';
 import FinalCta from '@/components/sections/FinalCta.astro';
+import Button from '@/components/Button.astro';
 
-const industries = await getCollection('industries');
+const industries = (await getCollection('industries')).sort((a, b) => a.data.order - b.data.order);
+
+const commonNeeds = [
+  {
+    heading: 'Systems Integration',
+    body: 'Connect ERP, CRM, accounting, inventory, e-commerce, warehouse, production, reporting, and other business platforms.',
+  },
+  {
+    heading: 'AI Tools and Data Analysis',
+    body: 'Use AI-supported tools to analyze data, identify trends, clean information, reduce spreadsheet work, and turn large data sets into useful insight.',
+  },
+  {
+    heading: 'Workflow Automation',
+    body: 'Automate recurring manual processes, reporting steps, customer handoffs, product updates, and internal workflows.',
+  },
+  {
+    heading: 'Product, Item, and Material Data',
+    body: 'Clean, standardize, organize, and improve product listings, item master files, product feeds, raw materials, components, and specifications.',
+  },
+  {
+    heading: 'API and Customer Connections',
+    body: 'Support APIs, data feeds, connected portals, EDI, and system-to-system workflows where customer, vendor, supplier, or partner connections are needed.',
+  },
+  {
+    heading: 'Technology Strategy and Implementation',
+    body: 'Evaluate current systems, identify the right technology path, prioritize projects, and move from strategy into working solutions.',
+  },
+];
 ---
 
 <BaseLayout
-  seoTitle="Industries We Serve: AI, Automation & Systems Integration | Cornerstone"
-  metaDescription="Cornerstone Strategy & Integrations provides AI, automation, and systems integration services across distribution, e-commerce, logistics, manufacturing, and professional services."
+  seoTitle="Industries Served | Systems Integration, AI, and Automation | Cornerstone"
+  metaDescription="Cornerstone helps distribution, e-commerce, retail, 3PL, logistics, warehousing, and manufacturing companies connect systems, automate workflows, analyze data, and improve operations."
 >
-  <section class="bg-surface-muted py-16 sm:py-20">
-    <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">Industries</h1>
-      <p class="mt-6 text-base leading-relaxed text-stone-600 sm:text-lg">
-        Cornerstone works with businesses across a range of industries. Here's how our services apply in real
-        operating environments.
-      </p>
-    </div>
-  </section>
+  <Hero
+    title="Industries We Help With Systems Integration, AI, and Automation"
+    imageAlt="Systems integration, AI tools, workflow automation, CRM, API connections, product data, inventory, and reporting for distribution, e-commerce, 3PL, logistics, and manufacturing companies"
+    cta={{ text: 'Schedule a Free Consultation', link: '/contact/' }}
+    paragraphs={[
+      'Cornerstone Strategy & Integrations helps businesses that rely on connected systems, accurate data, and repeatable workflows improve how information moves across the company.',
+      'Many businesses use multiple platforms to manage sales, inventory, pricing, product data, customer onboarding, warehouse activity, purchasing, production, reporting, and financial information. When those systems do not work together, teams spend too much time moving information manually, cleaning spreadsheets, reconciling reports, and managing disconnected workflows.',
+      'Cornerstone helps businesses build more connected technology environments around the way they actually operate.',
+      'Select an industry below to see how our services apply to your business model.',
+    ]}
+  />
 
   <section class="bg-white py-14 sm:py-16">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl">Explore Industries We Serve</h2>
+        <p class="mt-4 text-base leading-relaxed text-stone-600">
+          Each industry has different systems, workflows, data needs, and operational priorities. Use the cards below
+          to choose the industry that best matches your business and see more detailed examples.
+        </p>
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
         {
           industries.map((industry) => (
             <div class="flex flex-col rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
-              <h2 class="text-lg font-semibold text-primary">{industry.data.navLabel}</h2>
-              <p class="mt-2 flex-1 text-sm leading-relaxed text-stone-600">{industry.data.summary}</p>
-              <Button href={`/industries/${industry.id}/`} variant="ghost" class="mt-4 self-start">
-                Learn More
+              <h3 class="text-lg font-semibold text-primary">{industry.data.navLabel}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-stone-600">{industry.data.summary}</p>
+              {industry.data.focusAreas.length > 0 && (
+                <>
+                  <p class="mt-4 text-sm font-semibold text-primary">Common focus areas include:</p>
+                  <ul class="mt-2 flex-1 space-y-1.5">
+                    {industry.data.focusAreas.map((area) => (
+                      <li class="flex items-start gap-2.5">
+                        <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                        <span class="text-sm leading-relaxed text-stone-700">{area}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+              <Button href={`/industries/${industry.id}/`} variant="ghost" class="mt-5 self-start">
+                View {industry.data.navLabel}
               </Button>
             </div>
           ))
@@ -39,10 +91,42 @@ const industries = await getCollection('industries');
     </div>
   </section>
 
+  <ContentSection
+    heading="Common Technology Needs Across These Industries"
+    intro={[
+      'Although each industry operates differently, many companies need better ways to connect systems, clean data, automate workflows, analyze information, and improve reporting.',
+    ]}
+    layout="grid"
+    items={commonNeeds}
+    tone="muted"
+  />
+
+  <section class="bg-white py-14 sm:py-16">
+    <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl">Choose the Industry That Matches Your Business</h2>
+      <p class="mt-4 text-base leading-relaxed text-stone-600">
+        Each industry page explains how Cornerstone applies systems integration, AI tools, workflow automation, API
+        connections, CRM support, data management, and reporting to that specific business model.
+      </p>
+      <p class="mt-4 text-base leading-relaxed text-stone-600">
+        Select the industry that best fits your company to see more detailed examples.
+      </p>
+      <div class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        {
+          industries.map((industry) => (
+            <Button href={`/industries/${industry.id}/`} variant="ghost" class="w-full">
+              View {industry.data.navLabel}
+            </Button>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
   <FinalCta
-    heading="Don't See Your Industry?"
-    body="Cornerstone works with businesses across many industries. Schedule a free consultation to discuss your specific operations."
+    heading="Not Sure Where to Start?"
+    body="Schedule a free consultation to discuss your current systems, workflows, data, and the technology decisions your business needs to make next."
     primaryCta={{ text: 'Schedule a Free Consultation', link: '/contact/' }}
-    secondaryCta={{ text: 'Explore All Services', link: '/services/' }}
+    secondaryCta={{ text: 'Explore Our Services', link: '/services/' }}
   />
 </BaseLayout>

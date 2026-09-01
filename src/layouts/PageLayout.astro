@@ -6,9 +6,12 @@ import FinalCta from '@/components/sections/FinalCta.astro';
 
 interface Section {
   heading: string;
-  intro?: string;
-  layout?: 'checklist' | 'cards' | 'steps' | 'grid';
-  items: { heading: string; body: string }[];
+  intro?: string[];
+  layout?: 'checklist' | 'cards' | 'steps' | 'grid' | 'feature';
+  items?: { heading: string; body: string }[];
+  bulletsIntro?: string;
+  bullets?: string[];
+  outro?: string[];
 }
 
 interface Props {
@@ -54,6 +57,9 @@ const {
         intro={section.intro}
         layout={section.layout}
         items={section.items}
+        bulletsIntro={section.bulletsIntro}
+        bullets={section.bullets}
+        outro={section.outro}
         tone={i % 2 === 0 ? 'default' : 'muted'}
       />
     ))

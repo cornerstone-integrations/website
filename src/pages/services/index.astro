@@ -12,7 +12,7 @@ const problems = [
   'Software platforms and databases do not communicate with each other.',
   'Employees manually move information between systems.',
   'Repetitive tasks consume time that should be spent on higher-value work.',
-  'Reporting, analysis, document processing, and follow-up take too long.',
+  'Data analysis, data cleanup, reporting, document processing, and follow-up take too long.',
   'Leadership wants to implement AI but does not know where it will create measurable value.',
   'The business has a known operational problem but lacks a clear technology solution.',
   'Technology projects are being handled individually without a broader strategy.',
@@ -23,42 +23,54 @@ const problems = [
 ---
 
 <BaseLayout
-  seoTitle="IT Systems Integration, AI & Automation Services | Cornerstone"
-  metaDescription="Connect business software, automate workflows, implement AI, and improve operations with IT systems integration and technology consulting services from Cornerstone."
+  seoTitle="IT Systems Integration, AI & Technology Services | Cornerstone"
+  metaDescription="Connect business software, automate workflows, implement practical AI, support customer API connections, and define the right technology strategy with Cornerstone."
 >
   <Hero
-    title="IT Systems Integration, AI, and IT Planning Services"
-    imageAlt="IT systems integration connecting SaaS platforms, APIs, databases, and automated business workflows"
+    title="IT Systems Integration, AI, and Technology Services"
+    imageAlt="IT systems integration connecting SaaS platforms, APIs, databases, AI tools, and automated business workflows"
     cta={{ text: 'Schedule a Free Consultation', link: '/contact/' }}
     paragraphs={[
       'Modern businesses rely on multiple software platforms, databases, and digital workflows. When those systems do not communicate, employees are forced to move data manually, repeat administrative tasks, and manage information across disconnected tools.',
-      'Cornerstone Strategy & Integrations helps businesses connect software systems, build API integrations, automate workflows, and implement practical AI solutions.',
+      'Cornerstone Strategy & Integrations helps businesses connect software systems, build API integrations, automate workflows, implement practical AI tools, and define technology plans that support real business operations.',
       'We provide both technology consulting and direct implementation. Whether you know exactly what needs to be connected or automated—or only know that your current process is not working—we can help define the right solution and put it into operation.',
     ]}
   />
 
   <section class="bg-white py-14 sm:py-16">
-    <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-      <div>
-        <h2 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl">Make Your Business Systems Work Together</h2>
-        <p class="mt-4 text-base leading-relaxed text-stone-600">
-          Your business systems, software platforms, data, and workflows should support one connected operation.
-        </p>
-        <p class="mt-4 text-base leading-relaxed text-stone-600">
-          Cornerstone helps businesses solve technology and operational challenges through systems integration,
-          workflow automation, AI implementation, customer API connections, and practical technology strategy.
-        </p>
-        <p class="mt-4 text-base leading-relaxed text-stone-600">
-          We help connect platforms across departments, automate repetitive processes, improve how information moves
-          through the business, and define the right technology solution when the path forward is not yet clear.
-        </p>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-10 lg:grid-cols-2">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl">Make Your Business Systems Work Together</h2>
+          <p class="mt-4 text-base leading-relaxed text-stone-600">
+            Your business systems, software platforms, data, and workflows should support one connected operation.
+          </p>
+          <p class="mt-4 text-base leading-relaxed text-stone-600">
+            Cornerstone helps businesses solve technology and operational challenges through systems integration,
+            workflow automation, AI implementation, customer API connections, and practical technology strategy.
+          </p>
+          <p class="mt-4 text-base leading-relaxed text-stone-600">
+            We help connect platforms across departments, automate repetitive processes, improve how information moves
+            through the business, and define the right technology solution when the path forward is not yet clear.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-surface-muted p-8">
+          <h3 class="text-lg font-semibold text-primary">Strategy and Implementation in One Place</h3>
+          <p class="mt-3 text-sm leading-relaxed text-stone-600">
+            Whether you need a specific integration, targeted automation, customer connection support, or a broader
+            technology roadmap, Cornerstone provides strategic guidance and direct implementation. We help define the
+            right solution and put it into operation.
+          </p>
+        </div>
       </div>
-      <div class="rounded-2xl bg-surface-muted p-8">
-        <h3 class="text-lg font-semibold text-primary">Strategy and Implementation in One Place</h3>
-        <p class="mt-3 text-sm leading-relaxed text-stone-600">
-          Whether you need a specific integration, targeted automation, customer connection support, or a broader
-          technology roadmap, Cornerstone provides strategic guidance and direct implementation. We help define the
-          right solution and put it into operation.
+
+      <div class="mt-10 max-w-3xl space-y-4 text-base leading-relaxed text-stone-600">
+        <p>
+          Cornerstone provides four core service areas that help businesses solve operational problems, improve how
+          systems work together, and implement the right technology solutions.
+        </p>
+        <p>
+          Each service can be used independently or combined as part of a broader integration and technology strategy.
         </p>
       </div>
     </div>
@@ -66,25 +78,14 @@ const problems = [
 
   <section class="bg-surface-muted py-14 sm:py-16">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-3xl text-center">
-        <h2 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl">
-          Technology Services That Connect, Automate, and Improve Your Business
-        </h2>
-        <p class="mt-4 text-base leading-relaxed text-stone-600">
-          Cornerstone provides four core service areas that help businesses solve operational problems, improve how
-          systems work together, and implement the right technology solutions. Each service can be used
-          independently or combined as part of a broader integration and technology strategy.
-        </p>
-      </div>
-
-      <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
         {
           services.map((service) => (
             <div class="flex flex-col rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
-              <h3 class="text-lg font-semibold text-primary">{service.data.navLabel}</h3>
+              <h2 class="text-lg font-semibold text-primary">{service.data.navLabel}</h2>
               <p class="mt-2 flex-1 text-sm leading-relaxed text-stone-600">{service.data.summary}</p>
               <Button href={`/services/${service.id}/`} variant="ghost" class="mt-4 self-start">
-                Explore {service.data.navLabel} Services
+                {service.data.cardCtaText ?? `Explore ${service.data.navLabel}`}
               </Button>
             </div>
           ))
@@ -95,15 +96,17 @@ const problems = [
 
   <ContentSection
     heading="Business Technology Problems We Help Solve"
-    intro="Cornerstone helps businesses address technology and operational challenges that create delays, duplicate work, disconnected data, and unnecessary administrative burden."
+    intro={[
+      'Cornerstone helps businesses address technology and operational challenges that create delays, duplicate work, disconnected data, and unnecessary administrative burden.',
+    ]}
     layout="checklist"
-    items={problems.map((p) => ({ heading: p, body: '' }))}
+    bullets={problems}
   />
 
   <div class="bg-white pb-14 text-center sm:pb-16">
-    <h3 class="text-xl font-semibold text-primary">See How These Problems Can Be Solved</h3>
-    <p class="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-stone-600">
-      Explore examples of how systems integration, AI workflow automation, technology planning, and managed API
+    <h2 class="text-xl font-semibold text-primary">See How These Problems Can Be Solved</h2>
+    <p class="mx-auto mt-3 max-w-2xl px-4 text-sm leading-relaxed text-stone-600">
+      Explore examples of how systems integration, AI tools and implementation, technology planning, and managed API
       connections can improve business operations.
     </p>
     <div class="mt-6">
@@ -113,7 +116,7 @@ const problems = [
 
   <FinalCta
     heading="Find the Right Technology Solution for Your Business"
-    body="Whether you need to connect systems, automate workflows, implement AI, simplify customer API connections, or define a broader technology roadmap, Cornerstone can help. Schedule a free consultation to discuss your current systems, operational challenges, and the right next step for your business."
+    body="Whether you need to connect systems, automate workflows, implement AI tools, simplify customer API connections, or define a broader technology roadmap, Cornerstone can help. Schedule a free consultation to discuss your current systems, operational challenges, and the right next step for your business."
     primaryCta={{ text: 'Schedule a Free Consultation', link: '/contact/' }}
     secondaryCta={{ text: 'Learn More About How We Work', link: '/how-it-works/' }}
   />

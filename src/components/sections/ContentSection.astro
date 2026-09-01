@@ -6,39 +6,96 @@ interface Item {
 
 interface Props {
   heading: string;
-  intro?: string;
-  layout?: 'checklist' | 'cards' | 'steps' | 'grid';
-  items: Item[];
+  intro?: string[];
+  layout?: 'checklist' | 'cards' | 'steps' | 'grid' | 'feature';
+  items?: Item[];
+  bulletsIntro?: string;
+  bullets?: string[];
+  outro?: string[];
   tone?: 'default' | 'muted';
 }
 
-const { heading, intro, layout = 'cards', items, tone = 'default' } = Astro.props;
+const {
+  heading,
+  intro = [],
+  layout = 'cards',
+  items = [],
+  bulletsIntro,
+  bullets = [],
+  outro = [],
+  tone = 'default',
+} = Astro.props;
+
 const cols = items.length >= 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2';
+// Feature sections are long-form reading, so they run left-aligned in a single
+// column instead of the centred header the card/checklist sections use.
+const isFeature = layout === 'feature';
 ---
 
 <section class:list={['py-14 sm:py-16', tone === 'muted' ? 'bg-surface-muted' : 'bg-white']}>
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-3xl text-center">
+    <div class:list={[isFeature ? 'mx-auto max-w-4xl' : 'mx-auto max-w-3xl text-center']}>
       <h2 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl">{heading}</h2>
-      {intro && <p class="mt-4 text-base leading-relaxed text-stone-600">{intro}</p>}
+      {intro.length > 0 && (
+        <div class="mt-4 space-y-4 text-base leading-relaxed text-stone-600">
+          {intro.map((p) => <p>{p}</p>)}
+        </div>
+      )}
     </div>
 
     {
+      isFeature && (
+        <div class="mx-auto max-w-4xl">
+          {bullets.length > 0 && (
+            <>
+              {bulletsIntro && <p class="mt-6 text-base font-semibold text-primary">{bulletsIntro}</p>}
+              <ul class="mt-4 grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2">
+                {bullets.map((b) => (
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                    <span class="text-sm leading-relaxed text-stone-700">{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+          {outro.length > 0 && (
+            <div class="mt-6 space-y-4 text-base leading-relaxed text-stone-600">
+              {outro.map((p) => (
+                <p>{p}</p>
+              ))}
+            </div>
+          )}
+        </div>
+      )
+    }
+
+    {
       layout === 'checklist' && (
-        <ul class="mx-auto mt-10 max-w-2xl space-y-3">
-          {items.map((item) => (
-            <li class="flex items-start gap-3 rounded-lg bg-surface-muted px-4 py-3">
-              <svg class="mt-0.5 h-5 w-5 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  fill-rule="evenodd"
-                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              <span class="text-sm text-stone-700 sm:text-base">{item.heading || item.body}</span>
-            </li>
-          ))}
-        </ul>
+        <>
+          {bulletsIntro && <p class="mx-auto mt-8 max-w-2xl text-base font-semibold text-primary">{bulletsIntro}</p>}
+          <ul class="mx-auto mt-4 max-w-2xl space-y-3">
+            {bullets.map((b) => (
+              <li class="flex items-start gap-3 rounded-lg bg-surface-muted px-4 py-3">
+                <svg class="mt-0.5 h-5 w-5 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-sm text-stone-700 sm:text-base">{b}</span>
+              </li>
+            ))}
+          </ul>
+          {outro.length > 0 && (
+            <div class="mx-auto mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-stone-600">
+              {outro.map((p) => (
+                <p>{p}</p>
+              ))}
+            </div>
+          )}
+        </>
       )
     }
 

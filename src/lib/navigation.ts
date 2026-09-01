@@ -1,6 +1,8 @@
 export type NavLink = { label: string; href: string };
 export type NavItem = { label: string; href: string; children?: NavLink[] };
 
+// Labels mirror the Page Name field on each final page-build doc, so the nav
+// entry and the page's H1 describe the same thing. URLs are fixed by the site map.
 export const primaryNav: NavItem[] = [
   { label: 'Home', href: '/' },
   {
@@ -8,23 +10,10 @@ export const primaryNav: NavItem[] = [
     href: '/services/',
     children: [
       { label: 'Services Overview', href: '/services/' },
-      { label: 'AI Workflow Automation', href: '/services/ai-workflow-automation/' },
+      { label: 'AI Tools, Skills, and Implementation', href: '/services/ai-workflow-automation/' },
       { label: 'Systems Integration', href: '/services/systems-integration/' },
       { label: 'Technology Strategy and Implementation', href: '/services/technology-strategy-implementation/' },
-      { label: 'Customer API Connections', href: '/services/customer-api-connections/' },
-    ],
-  },
-  {
-    label: 'Solutions',
-    href: '/solutions/',
-    children: [
-      { label: 'Solutions Overview', href: '/solutions/' },
-      { label: 'Automate Repetitive Work and Reduce Administrative Labor', href: '/solutions/automate-repetitive-work/' },
-      { label: 'Implement AI in Business Operations', href: '/solutions/ai-business-implementation/' },
-      { label: 'Connect Disconnected Business Systems', href: '/solutions/connect-business-systems/' },
-      { label: 'Automate Reporting and Routine Analysis', href: '/solutions/automate-reporting-analysis/' },
-      { label: 'Build a Technology Roadmap', href: '/solutions/technology-roadmap/' },
-      { label: 'Scale Customer API Onboarding', href: '/solutions/customer-api-onboarding/' },
+      { label: 'Customer and Vendor API Connections', href: '/services/customer-api-connections/' },
     ],
   },
   {
@@ -34,9 +23,8 @@ export const primaryNav: NavItem[] = [
       { label: 'Industries Overview', href: '/industries/' },
       { label: 'Distribution and Wholesale', href: '/industries/distribution-wholesale/' },
       { label: 'E-Commerce and Retail', href: '/industries/ecommerce-retail/' },
-      { label: 'Warehousing and Logistics', href: '/industries/warehousing-logistics/' },
+      { label: 'Warehousing, Logistics, and 3PL', href: '/industries/warehousing-logistics/' },
       { label: 'Manufacturing', href: '/industries/manufacturing/' },
-      { label: 'Professional Services', href: '/industries/professional-services/' },
     ],
   },
   { label: 'How It Works', href: '/how-it-works/' },
