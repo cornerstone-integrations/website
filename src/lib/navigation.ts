@@ -28,7 +28,7 @@ export const primaryNav: NavItem[] = [
     ],
   },
   { label: 'How It Works', href: '/how-it-works/' },
-  { label: 'About', href: '/about/' },
+  { label: 'About Cornerstone', href: '/about/' },
   {
     label: 'Resources',
     href: '/resources/',

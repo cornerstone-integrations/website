@@ -1,48 +1,65 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/sections/Hero.astro';
 import ContentSection from '@/components/sections/ContentSection.astro';
 import FinalCta from '@/components/sections/FinalCta.astro';
 
 const steps = [
   {
-    heading: 'Start With a Free Consultation',
-    body: 'Understand the business challenge, goal, current systems, and desired outcome.',
+    heading: 'Objective Alignment',
+    body: 'Every engagement starts with the outcome your business needs to achieve. Cornerstone confirms the business objective, current challenge, and success criteria before scope or implementation begins.',
   },
   {
-    heading: 'Define the Right Solution',
-    body: 'Evaluate available options and create a practical plan based on business value, scalability, and implementation priorities.',
+    heading: 'Solution Planning',
+    body: 'The business objective is translated into a practical project approach. Cornerstone reviews the systems, workflows, data needs, technical requirements, and business priorities involved so the recommended path is clear before pricing is provided.',
   },
   {
-    heading: 'Implement the Solution',
-    body: 'Connect systems, automate workflows, introduce AI where it creates value, and support rollout.',
+    heading: 'Project Quote',
+    body: 'Cornerstone provides a project quote based on the agreed approach. Your team can review the investment and approve the work before implementation planning begins.',
   },
   {
-    heading: 'Ongoing Support as Needed',
-    body: 'Provide continued support, refinements, and additional integrations when needed.',
+    heading: 'Implementation Planning',
+    body: 'Approved projects move into a defined implementation plan. This establishes the project sequence, communication points, testing requirements, and handoff expectations before execution begins.',
+  },
+  {
+    heading: 'Execution and Validation',
+    body: 'Cornerstone completes the approved work and validates the solution against the intended business process. The goal is a working implementation that can be adopted by your team with confidence.',
+  },
+  {
+    heading: 'Support and Continuous Improvement',
+    body: 'After launch, Cornerstone can remain involved to support the solution. Ongoing support may include troubleshooting, refinements, maintenance, or future improvements as business needs change.',
   },
 ];
 ---
 
 <BaseLayout
-  seoTitle="How It Works: Our Engagement Process | Cornerstone"
-  metaDescription="See how Cornerstone Strategy & Integrations moves from a free consultation to a defined plan, direct implementation, and ongoing support."
+  seoTitle="How Cornerstone Works | Technology Implementation Process"
+  metaDescription="Learn how Cornerstone evaluates business objectives, defines project scope, develops implementation plans, executes approved work, and provides ongoing technology support."
 >
-  <section class="bg-surface-muted py-16 sm:py-20">
-    <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">How It Works</h1>
-      <p class="mt-6 text-base leading-relaxed text-stone-600 sm:text-lg">
-        Working with Cornerstone is simple, structured, and low-risk — from your first conversation through
-        implementation and ongoing support.
-      </p>
-    </div>
-  </section>
+  <Hero
+    title="How Cornerstone Works With Clients"
+    imageAlt="Technology implementation process showing business objective review, project planning, scope definition, implementation, execution, and ongoing support"
+    cta={{ text: 'Schedule a Free Consultation', link: '/contact/' }}
+    paragraphs={[
+      'Cornerstone Strategy & Integrations helps businesses improve operational efficiency by strengthening the systems, workflows, data processes, and technology infrastructure that support daily work.',
+      'Some clients engage Cornerstone with a defined project already identified. Others have a known business challenge and need support determining the right technology path.',
+      'In both cases, the process begins with understanding the business objective. Cornerstone evaluates the goal, current systems, workflows, data requirements, and operational context before developing a practical plan for implementation.',
+    ]}
+  />
 
-  <ContentSection heading="Our Process" layout="steps" items={steps} />
+  <ContentSection
+    heading="A Defined Process for Technology Implementation"
+    intro={[
+      'Cornerstone follows a clear engagement process designed to move from business objective to implemented solution. Each step is built to clarify expectations, control scope, and ensure the work supports how the business operates.',
+    ]}
+    layout="process"
+    items={steps}
+  />
 
   <FinalCta
-    heading="Ready to Get Started?"
-    body="Schedule a free consultation to discuss your business challenge, current systems, and desired outcome."
-    primaryCta={{ text: 'Schedule a Free Consultation', link: '/contact/' }}
-    secondaryCta={{ text: 'Explore All Services', link: '/services/' }}
+    heading="Request for Quote"
+    body="If your company has a defined project or a business challenge that needs review, Cornerstone can help clarify the approach, quote the work, execute implementation, and support the solution after launch. Schedule a free consultation to discuss your current systems, workflows, data needs, and technology priorities."
+    primaryCta={{ text: 'Request a Quote', link: '/contact/' }}
+    secondaryCta={{ text: 'Explore Our Services', link: '/services/' }}
   />
 </BaseLayout>

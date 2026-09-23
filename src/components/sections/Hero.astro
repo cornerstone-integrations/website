@@ -5,7 +5,7 @@ interface Props {
   title: string;
   paragraphs: string[];
   imageAlt: string;
-  cta: { text: string; link: string };
+  cta?: { text: string; link: string };
 }
 
 const { title, paragraphs, imageAlt, cta } = Astro.props;
@@ -18,9 +18,13 @@ const { title, paragraphs, imageAlt, cta } = Astro.props;
       <div class="mt-6 space-y-4 text-base leading-relaxed text-stone-600 sm:text-lg">
         {paragraphs.map((p) => <p>{p}</p>)}
       </div>
-      <div class="mt-8">
-        <Button href={cta.link}>{cta.text}</Button>
-      </div>
+      {
+        cta && (
+          <div class="mt-8">
+            <Button href={cta.link}>{cta.text}</Button>
+          </div>
+        )
+      }
     </div>
     <div class="relative hidden aspect-[4/3] items-center justify-center rounded-2xl bg-primary lg:flex" role="img" aria-label={imageAlt}>
       <div class="hero-grid absolute inset-0 rounded-2xl opacity-30"></div>

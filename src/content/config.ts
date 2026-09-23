@@ -16,7 +16,8 @@ const itemSchema = z.object({
 });
 
 // A generic content section. `layout` picks the rendering:
-//   cards / grid / steps -> driven by `items` (heading + body)
+//   cards / grid / steps / process -> driven by `items` (heading + body);
+//                           process runs the steps across in rows on desktop
 //   checklist            -> driven by `bullets` (flat strings)
 //   feature              -> long-form: intro paragraphs, then `bullets`, then `outro`
 // `intro` and `outro` are arrays because the final page docs run several
@@ -24,7 +25,7 @@ const itemSchema = z.object({
 const sectionSchema = z.object({
   heading: z.string(),
   intro: z.array(z.string()).default([]),
-  layout: z.enum(['checklist', 'cards', 'steps', 'grid', 'feature']).default('cards'),
+  layout: z.enum(['checklist', 'cards', 'steps', 'process', 'grid', 'feature']).default('cards'),
   items: z.array(itemSchema).default([]),
   /** Lead-in line above the bullet list, e.g. "This may include integrations between:" */
   bulletsIntro: z.string().optional(),

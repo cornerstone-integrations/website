@@ -7,7 +7,7 @@ interface Item {
 interface Props {
   heading: string;
   intro?: string[];
-  layout?: 'checklist' | 'cards' | 'steps' | 'grid' | 'feature';
+  layout?: 'checklist' | 'cards' | 'steps' | 'process' | 'grid' | 'feature';
   items?: Item[];
   bulletsIntro?: string;
   bullets?: string[];
@@ -137,6 +137,22 @@ const isFeature = layout === 'feature';
                 <h3 class="text-lg font-semibold text-primary">{item.heading}</h3>
                 <p class="mt-2 text-sm leading-relaxed text-stone-600">{item.body}</p>
               </div>
+            </li>
+          ))}
+        </ol>
+      )
+    }
+
+    {
+      layout === 'process' && (
+        <ol class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((item, i) => (
+            <li class="flex flex-col rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
+              <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">
+                {i + 1}
+              </span>
+              <h3 class="mt-4 text-lg font-semibold text-primary">{item.heading}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-stone-600">{item.body}</p>
             </li>
           ))}
         </ol>

@@ -1,62 +1,47 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/sections/Hero.astro';
+import ContentSection from '@/components/sections/ContentSection.astro';
 import FinalCta from '@/components/sections/FinalCta.astro';
 import Button from '@/components/Button.astro';
 
-const differentiators = [
-  'Strategy and implementation in one place.',
-  'Practical AI implementation focused on business outcomes.',
-  'Ability to connect multiple SaaS platforms and databases through API integrations.',
-  'Focus on scalable systems, productivity, and reduced administrative burden.',
-  'Hands-on support after the initial solution is defined.',
+const experience = [
+  'Cornerstone was founded by professionals who have spent their careers on opposite sides of the same challenge: running businesses and implementing the technology that supports them.',
+  'Our business experience includes leading companies large and small across distribution, retail, e-commerce, logistics, real estate, and other operating environments. That experience includes building businesses from the ground up, managing growth, navigating stabilization, leading business development, and making technology investments where the results ultimately have to justify the cost.',
+  'Our technical founder brings extensive programming, integration, and implementation experience across multiple industries, providing the technical capability needed to turn strategy into working solutions.',
+  'Together, those backgrounds shape how Cornerstone approaches technology investment. We consider both what CAN be built and what SHOULD be built, with a strong emphasis on planning, execution, and return on investment.',
+  'Cornerstone is more than consulting and more than IT support. We combine the perspective of people who operate businesses with the technical expertise required to implement the solution.',
 ];
 ---
 
 <BaseLayout
-  seoTitle="About Cornerstone Strategy & Integrations"
-  metaDescription="Cornerstone Strategy & Integrations is a national technology strategy, systems integration, and AI implementation provider headquartered in Lancaster, Pennsylvania."
-  noindex
+  seoTitle="About Cornerstone Strategy & Integrations | Business Consulting and Technical Implementation"
+  metaDescription="Cornerstone Strategy & Integrations combines experienced business leadership with technical integration and implementation to help companies make better technology investments and execute practical solutions."
 >
-  <section class="bg-surface-muted py-16 sm:py-20">
-    <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-      <p class="text-sm font-semibold uppercase tracking-wide text-accent">In Development</p>
-      <h1 class="mt-2 text-3xl font-bold tracking-tight text-primary sm:text-4xl">About Cornerstone</h1>
-      <p class="mt-6 text-base leading-relaxed text-stone-600 sm:text-lg">
-        Cornerstone Strategy & Integrations LLC is a national provider headquartered in Lancaster, Pennsylvania, and
-        both a strategic consulting partner and a hands-on implementation provider. Full company copy is pending —
-        the differentiators below are confirmed from the approved site strategy.
-      </p>
-    </div>
-  </section>
+  <Hero
+    title="About Cornerstone Strategy & Integrations"
+    imageAlt="Business leadership and technical integration working together to deliver practical technology solutions"
+    paragraphs={[
+      'Cornerstone Strategy & Integrations is a partnership between experienced business executives, programmers, and integration engineers.',
+      'We partner with clients to develop practical technology solutions that support real business needs. Our approach blends business consulting with technical execution, helping companies define the path, improve efficiency, and implement solutions that create measurable value.',
+      'That combination allows us to look at technology from both sides: what the business is trying to accomplish and what is required technically to make it work.',
+      'Headquartered in Lancaster, Pennsylvania, Cornerstone serves a national client base.',
+    ]}
+  />
 
-  <section class="bg-white py-14 sm:py-16">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-center text-2xl font-bold tracking-tight text-primary">What Sets Cornerstone Apart</h2>
-      <ul class="mx-auto mt-8 max-w-2xl space-y-3">
-        {
-          differentiators.map((item) => (
-            <li class="flex items-start gap-3 rounded-lg bg-surface-muted px-4 py-3">
-              <svg class="mt-0.5 h-5 w-5 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  fill-rule="evenodd"
-                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              <span class="text-sm text-stone-700 sm:text-base">{item}</span>
-            </li>
-          ))
-        }
-      </ul>
-      <div class="mt-8 text-center">
-        <Button href="/services/" variant="ghost">Explore Our Services</Button>
-      </div>
+  <ContentSection heading="Built From Real-World Business and Technical Experience" intro={experience} layout="feature" />
+
+  <div class="bg-white pb-14 sm:pb-16">
+    <div class="mx-auto flex max-w-4xl flex-col gap-3 px-4 sm:flex-row sm:px-6 lg:px-8">
+      <Button href="/how-it-works/" variant="ghost">How It Works</Button>
+      <Button href="/services/" variant="ghost">Services</Button>
+      <Button href="/industries/" variant="ghost">Industries</Button>
     </div>
-  </section>
+  </div>
 
   <FinalCta
-    heading="Talk to Cornerstone"
-    body="Schedule a free consultation to discuss your business challenge, current systems, and desired outcome."
-    primaryCta={{ text: 'Schedule a Free Consultation', link: '/contact/' }}
+    heading="Request a Quote"
+    body="Discuss your business objective, current technology needs, or project with Cornerstone."
+    primaryCta={{ text: 'Request a Quote', link: '/contact/' }}
   />
 </BaseLayout>
