@@ -1,9 +1,11 @@
 export type NavLink = { label: string; href: string };
-export type NavItem = { label: string; href: string; children?: NavLink[] };
+// `hidden` keeps an entry out of the header, footer, and HTML sitemap while its
+// pages are still placeholders; the routes themselves stay live.
+export type NavItem = { label: string; href: string; children?: NavLink[]; hidden?: boolean };
 
 // Labels mirror the Page Name field on each final page-build doc, so the nav
 // entry and the page's H1 describe the same thing. URLs are fixed by the site map.
-export const primaryNav: NavItem[] = [
+const navItems: NavItem[] = [
   { label: 'Home', href: '/' },
   {
     label: 'Services',
@@ -32,6 +34,7 @@ export const primaryNav: NavItem[] = [
   {
     label: 'Resources',
     href: '/resources/',
+    hidden: true,
     children: [
       { label: 'Resources Overview', href: '/resources/' },
       { label: 'Insights', href: '/resources/insights/' },
@@ -41,6 +44,8 @@ export const primaryNav: NavItem[] = [
     ],
   },
 ];
+
+export const primaryNav = navItems.filter((item) => !item.hidden);
 
 export const footerNav: NavLink[] = [
   { label: 'Privacy Policy', href: '/privacy-policy/' },
