@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
 
 export default defineConfig({
-  site: 'https://www.cornerstoneintegrations.com',
+  site: 'https://cornerstoneintegrations.com',
   output: 'static',
   adapter: vercel(),
   // The Solutions section and the Professional Services industry page were dropped
