@@ -1,65 +1,86 @@
 ---
+const inputClass =
+  'mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent';
+
+const timingOptions = ['ASAP', 'Within 30 Days', 'Within 60-90 Days', 'Within 3-6 Months', 'Planning / Exploring'];
 ---
 
-<form id="contact-form" class="space-y-5" novalidate>
-  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
-    <div>
-      <label for="name" class="block text-sm font-medium text-primary">Name *</label>
-      <input type="text" id="name" name="name" required class="mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
+<div id="contact-form-wrapper">
+  <form id="contact-form" class="space-y-5" novalidate>
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div>
+        <label for="firstName" class="block text-sm font-medium text-primary">First Name *</label>
+        <input type="text" id="firstName" name="firstName" required autocomplete="given-name" class={inputClass} />
+      </div>
+      <div>
+        <label for="lastName" class="block text-sm font-medium text-primary">Last Name *</label>
+        <input type="text" id="lastName" name="lastName" required autocomplete="family-name" class={inputClass} />
+      </div>
+      <div>
+        <label for="company" class="block text-sm font-medium text-primary">Company Name *</label>
+        <input type="text" id="company" name="company" required autocomplete="organization" class={inputClass} />
+      </div>
+      <div>
+        <label for="companyWebsite" class="block text-sm font-medium text-primary">Company Website</label>
+        <input type="text" id="companyWebsite" name="companyWebsite" autocomplete="url" class={inputClass} />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-primary">Email *</label>
+        <input type="email" id="email" name="email" required autocomplete="email" class={inputClass} />
+      </div>
+      <div>
+        <label for="phone" class="block text-sm font-medium text-primary">Phone *</label>
+        <input type="tel" id="phone" name="phone" required autocomplete="tel" class={inputClass} />
+      </div>
     </div>
+
     <div>
-      <label for="company" class="block text-sm font-medium text-primary">Company</label>
-      <input type="text" id="company" name="company" class="mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
+      <label for="goal" class="block text-sm font-medium text-primary">What is your business trying to accomplish? *</label>
+      <textarea id="goal" name="goal" rows="5" required class={inputClass}></textarea>
     </div>
+
     <div>
-      <label for="email" class="block text-sm font-medium text-primary">Email *</label>
-      <input type="email" id="email" name="email" required class="mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
+      <label for="systems" class="block text-sm font-medium text-primary">What systems or software are currently involved?</label>
+      <textarea id="systems" name="systems" rows="3" class={inputClass}></textarea>
     </div>
+
     <div>
-      <label for="phone" class="block text-sm font-medium text-primary">Phone</label>
-      <input type="tel" id="phone" name="phone" class="mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
+      <label for="timing" class="block text-sm font-medium text-primary">Desired Project Completion Date *</label>
+      <select id="timing" name="timing" required class={inputClass}>
+        <option value="">Select one</option>
+        {timingOptions.map((option) => <option value={option}>{option}</option>)}
+      </select>
     </div>
+
+    <!-- Honeypot: hidden from real visitors, bots tend to fill every field they see. -->
+    <div class="hidden" aria-hidden="true">
+      <label for="hp_field">Leave this field blank</label>
+      <input type="text" id="hp_field" name="hp_field" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <button
+      type="submit"
+      class="inline-flex w-full items-center justify-center rounded-md bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-dark disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+    >
+      Request a Consultation
+    </button>
+
+    <p id="contact-form-status" class="text-sm" role="status"></p>
+  </form>
+
+  <div id="contact-form-confirmation" class="hidden rounded-xl border border-stone-200 bg-surface-muted p-8" tabindex="-1">
+    <h3 class="text-xl font-semibold text-primary">Thank You for Contacting Cornerstone</h3>
+    <p class="mt-3 text-base leading-relaxed text-stone-600">
+      Your consultation request has been received. A member of the Cornerstone Strategy &amp; Integrations team will
+      review the information provided and follow up regarding your needs and appropriate next steps.
+    </p>
   </div>
-
-  <div>
-    <label for="companyWebsite" class="block text-sm font-medium text-primary">Company Website</label>
-    <input type="text" id="companyWebsite" name="companyWebsite" class="mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
-  </div>
-
-  <div>
-    <label for="goal" class="block text-sm font-medium text-primary">Brief Description of the Problem or Goal *</label>
-    <textarea id="goal" name="goal" rows="4" required class="mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"></textarea>
-  </div>
-
-  <div>
-    <label for="systemsUsed" class="block text-sm font-medium text-primary">Systems Currently Used</label>
-    <textarea id="systemsUsed" name="systemsUsed" rows="2" class="mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"></textarea>
-  </div>
-
-  <div>
-    <label for="nextStep" class="block text-sm font-medium text-primary">Preferred Next Step</label>
-    <input type="text" id="nextStep" name="nextStep" placeholder="e.g. Call me this week, send more information, etc." class="mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent" />
-  </div>
-
-  <!-- Honeypot: hidden from real visitors, bots tend to fill every field they see. -->
-  <div class="hidden" aria-hidden="true">
-    <label for="hp_field">Leave this field blank</label>
-    <input type="text" id="hp_field" name="hp_field" tabindex="-1" autocomplete="off" />
-  </div>
-
-  <button
-    type="submit"
-    class="inline-flex w-full items-center justify-center rounded-md bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-dark disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
-  >
-    Schedule a Free Consultation
-  </button>
-
-  <p id="contact-form-status" class="text-sm" role="status"></p>
-</form>
+</div>
 
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
   const status = document.getElementById('contact-form-status');
+  const confirmation = document.getElementById('contact-form-confirmation');
 
   form?.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -74,12 +95,15 @@
       const response = await fetch('/api/contact', { method: 'POST', body: new FormData(form) });
       const result = await response.json();
 
-      status.textContent = result.message;
-      status.className = `text-sm ${result.success ? 'text-green-600' : 'text-red-600'}`;
-
       if (result.success) {
-        form.reset();
+        form.classList.add('hidden');
+        confirmation?.classList.remove('hidden');
+        confirmation?.focus();
+        return;
       }
+
+      status.textContent = result.message;
+      status.className = 'text-sm text-red-600';
     } catch {
       status.textContent = 'Something went wrong. Please try again in a moment.';
       status.className = 'text-sm text-red-600';

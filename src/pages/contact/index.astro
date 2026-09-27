@@ -1,42 +1,40 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ContactForm from '@/components/ContactForm.astro';
+import Button from '@/components/Button.astro';
 ---
 
 <BaseLayout
-  seoTitle="Contact Cornerstone: Schedule a Free Consultation"
-  metaDescription="Schedule a free consultation with Cornerstone Strategy & Integrations to discuss your business challenge, current systems, and the right next step."
+  seoTitle="Request a Consultation | Cornerstone Strategy & Integrations"
+  metaDescription="Request a consultation with Cornerstone Strategy & Integrations to discuss your business objective, current systems, and technology implementation needs."
 >
   <section class="bg-surface-muted py-16 sm:py-20">
     <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">Schedule a Free Consultation</h1>
-      <p class="mt-6 text-base leading-relaxed text-stone-600 sm:text-lg">
-        Tell us about your business challenge, goal, current systems, or desired outcome, and we'll help determine
-        the right next step.
+      <h1 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl">Request a Consultation</h1>
+      <p class="mt-4 text-lg font-semibold text-primary sm:text-xl">Tell us what your business is trying to accomplish.</p>
+      <p class="mt-4 text-base leading-relaxed text-stone-600 sm:text-lg">
+        Whether you have a defined project or need help determining the right technical path forward, provide the
+        information you have today. Cornerstone will review your request from both a business and technical
+        perspective and follow up to discuss your needs and appropriate next steps.
       </p>
     </div>
   </section>
 
   <section class="bg-white py-14 sm:py-16">
-    <div class="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
-      <div class="lg:col-span-2">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl">Tell Us About Your Project</h2>
+      <div class="mt-8">
         <ContactForm />
-      </div>
-      <div class="space-y-6">
-        <div class="rounded-xl border border-stone-200 bg-surface-muted p-6">
-          <h2 class="text-sm font-semibold uppercase tracking-wide text-primary">Get in Touch</h2>
-          <dl class="mt-4 space-y-3 text-sm text-stone-600">
-            <div>
-              <dt class="font-medium text-primary">Headquarters</dt>
-              <dd>Lancaster, Pennsylvania</dd>
-            </div>
-            <div>
-              <dt class="font-medium text-primary">Service Area</dt>
-              <dd>Serving businesses nationwide</dd>
-            </div>
-          </dl>
-        </div>
       </div>
     </div>
   </section>
+
+  <div class="bg-white pb-14 sm:pb-16">
+    <div class="mx-auto flex max-w-3xl flex-col gap-3 px-4 sm:flex-row sm:flex-wrap sm:px-6 lg:px-8">
+      <Button href="/about/" variant="ghost">About Cornerstone</Button>
+      <Button href="/how-it-works/" variant="ghost">How It Works</Button>
+      <Button href="/services/" variant="ghost">Services</Button>
+      <Button href="/industries/" variant="ghost">Industries</Button>
+    </div>
+  </div>
 </BaseLayout>

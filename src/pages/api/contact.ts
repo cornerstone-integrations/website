@@ -16,17 +16,19 @@ export const POST: APIRoute = async ({ request }) => {
     return json({ success: false, message: 'Submission rejected.' }, 400);
   }
 
-  const name = String(formData.get('name') || '').trim();
+  const firstName = String(formData.get('firstName') || '').trim();
+  const lastName = String(formData.get('lastName') || '').trim();
+  const name = `${firstName} ${lastName}`.trim();
   const company = String(formData.get('company') || '').trim();
   const email = String(formData.get('email') || '').trim();
   const phone = String(formData.get('phone') || '').trim();
   const companyWebsite = String(formData.get('companyWebsite') || '').trim();
   const goal = String(formData.get('goal') || '').trim();
-  const systemsUsed = String(formData.get('systemsUsed') || '').trim();
-  const nextStep = String(formData.get('nextStep') || '').trim();
+  const systems = String(formData.get('systems') || '').trim();
+  const timing = String(formData.get('timing') || '').trim();
 
-  if (!name || !email || !goal) {
-    return json({ success: false, message: 'Please provide your name, email, and a brief description of your goal.' }, 400);
+  if (!firstName || !lastName || !company || !email || !phone || !goal || !timing) {
+    return json({ success: false, message: 'Please complete all required fields.' }, 400);
   }
 
   if (!emailRegex.test(email)) {
@@ -34,7 +36,7 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   const submittedAt = new Date().toISOString();
-  const fields = { name, company, email, phone, companyWebsite, goal, systemsUsed, nextStep, submittedAt };
+  const fields = { firstName, lastName, company, email, phone, companyWebsite, goal, systems, timing, submittedAt };
 
   const resendApiKey = import.meta.env.RESEND_API_KEY;
   if (resendApiKey) {
@@ -48,15 +50,15 @@ export const POST: APIRoute = async ({ request }) => {
         subject: `New consultation request: ${name}${company ? ` — ${company}` : ''}`,
         text: [
           `Name: ${name}`,
-          company ? `Company: ${company}` : null,
+          `Company: ${company}`,
           `Email: ${email}`,
-          phone ? `Phone: ${phone}` : null,
+          `Phone: ${phone}`,
           companyWebsite ? `Company website: ${companyWebsite}` : null,
           '',
-          'Problem or goal:',
+          'What the business is trying to accomplish:',
           goal,
-          systemsUsed ? `\nSystems currently used:\n${systemsUsed}` : null,
-          nextStep ? `\nPreferred next step:\n${nextStep}` : null,
+          systems ? `\nSystems or software involved:\n${systems}` : null,
+          `\nDesired project completion date: ${timing}`,
           '',
           `Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })}`,
         ]
@@ -95,7 +97,7 @@ export const POST: APIRoute = async ({ request }) => {
     }
   }
 
-  return json({ success: true, message: "Thanks! We'll get back to you within one business day." });
+  return json({ success: true, message: 'Your consultation request has been received.' });
 };
 
 function json(body: Record<string, unknown>, status = 200) {
