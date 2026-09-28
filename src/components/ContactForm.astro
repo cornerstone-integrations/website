@@ -44,13 +44,26 @@ const timingOptions = ['ASAP', 'Within 30 Days', 'Within 60-90 Days', 'Within 3-
       <textarea id="systems" name="systems" rows="3" class={inputClass}></textarea>
     </div>
 
-    <div>
-      <label for="timing" class="block text-sm font-medium text-primary">Desired Project Completion Date *</label>
-      <select id="timing" name="timing" required class={inputClass}>
-        <option value="">Select one</option>
-        {timingOptions.map((option) => <option value={option}>{option}</option>)}
-      </select>
-    </div>
+    <fieldset>
+      <legend class="block text-sm font-medium text-primary">Desired Project Completion Date *</legend>
+      <div class="mt-2 space-y-2">
+        {
+          timingOptions.map((option, i) => (
+            <label class="flex items-center gap-2.5 text-sm text-stone-700">
+              <input
+                type="radio"
+                id={`timing-${i}`}
+                name="timing"
+                value={option}
+                required
+                class="h-4 w-4 accent-accent"
+              />
+              {option}
+            </label>
+          ))
+        }
+      </div>
+    </fieldset>
 
     <!-- Honeypot: hidden from real visitors, bots tend to fill every field they see. -->
     <div class="hidden" aria-hidden="true">
