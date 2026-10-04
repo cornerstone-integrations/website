@@ -27,7 +27,7 @@ heroParagraphs:
   - "We also act as a third-party integration partner for 3PL customer connections. Cornerstone helps customers connect to your systems, manages the technical onboarding process, supports API and data connection maintenance, and gives both the provider and the customer a verified point of contact who understands integration workflows."
   - "The result is a stronger technology ecosystem that helps your 3PL reduce manual work, improve customer onboarding, support cleaner data flow, and scale without forcing sales or operations teams to manage every technical connection."
 heroCta:
-  text: "Request a Consultation"
+  text: "Schedule a Free Consultation"
   link: "/contact/"
 
 sections:
@@ -113,7 +113,7 @@ sections:
 finalCtaHeading: "Build a Better Technology Ecosystem for Your 3PL Operation"
 finalCtaBody: "If your 3PL, warehousing, or logistics business needs stronger system connections, better CRM workflows, cleaner customer onboarding, or a more scalable way to support API connections, Cornerstone can help. We help 3PL companies connect sales platforms, ERP systems, CRM tools, warehouse systems, customer platforms, reporting dashboards, and SaaS programs. We also support customer API onboarding and connection maintenance so your team can stay focused on operations, fulfillment, service, and growth. Schedule a free consultation to discuss your current systems, CRM workflows, customer connection process, and opportunities to improve your 3PL technology stack."
 primaryCta:
-  text: "Request a Consultation"
+  text: "Schedule a Free Consultation"
   link: "/contact/"
 secondaryCta:
   text: "Explore Our Services"

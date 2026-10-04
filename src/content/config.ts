@@ -53,7 +53,7 @@ const pageFields = {
   heroParagraphs: z.array(z.string()),
   /** Systems drawn around the Cornerstone icon in the hero diagram (short labels, max 8). */
   heroNodes: z.array(z.string()).max(8).default([]),
-  heroCta: ctaSchema.default({ text: 'Request a Consultation', link: '/contact/' }),
+  heroCta: ctaSchema.default({ text: 'Schedule a Free Consultation', link: '/contact/' }),
 
   // Flexible body sections (problems solved, use cases, systems connected,
   // what's included, business outcomes, etc.)
@@ -62,7 +62,7 @@ const pageFields = {
   // Final CTA
   finalCtaHeading: z.string(),
   finalCtaBody: z.string(),
-  primaryCta: ctaSchema.default({ text: 'Request a Consultation', link: '/contact/' }),
+  primaryCta: ctaSchema.default({ text: 'Schedule a Free Consultation', link: '/contact/' }),
   secondaryCta: ctaSchema.optional(),
 
   internalLinks: z.array(internalLinkSchema).default([]),

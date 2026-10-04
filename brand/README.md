@@ -34,6 +34,7 @@ base SVGs from the PDFs and run the script again. Don't edit derived files by ha
 | Sienna | `#B95827` | Accent on light backgrounds: buttons, rules, icons, large text |
 | Sienna Dark | `#984820` | Hover states; small Sienna text on Sand |
 | Sienna Light | `#DE7A45` | Sienna on dark backgrounds only, including the reversed logos |
+| Mist | `#C9D1D9` | Takes Slate's place in the reversed logos and marks on dark backgrounds |
 | Sand | `#F5F1EC` | Alternate section background |
 | Ink 200–700 | `#D9DCDE`–`#394652` | Neutral grays tinted from Slate, for body text and borders |
 
@@ -41,12 +42,16 @@ Why Sienna Light exists: standard Sienna on Slate measures 2.49:1, below the 3:1
 backgrounds the white C overpowered the Sienna I and the tagline couldn't be read. Sienna Light measures 3.87:1 on
 Slate and 5.34:1 on Deep Slate, which keeps the C and I balanced. Never use Sienna Light on white or Sand (3.0:1).
 
+Why Mist: pure white made the reversed logo glare against Slate and pulled focus from the Sienna I. Mist is Slate
+lifted toward white, so the logo keeps its cool-C / warm-I contrast. It measures 7.54:1 on Slate and 10.42:1 on Deep
+Slate. Pure white is used only in the one-color `*-white` versions.
+
 Contrast rules: small text needs 4.5:1. Standard Sienna text is fine on white (4.68) but not on Sand (4.16), so use
 Sienna Dark for small text there. White text on Sienna buttons measures 4.68.
 
 ### Logo
 
-- Use full color on white or Sand. Use reversed on Slate or Deep Slate. Use one-color white when color isn't available
+- Use full color on white or Sand. Use reversed (Mist + Sienna Light) on Slate or Deep Slate. Use one-color white when color isn't available
   or the background is busy.
 - Minimum size: show the tagline only when the horizontal lockup is at least 80px tall. Smaller than that (for
   example, the site header), use the compact lockup. The icon alone can go down to 24px. Below 24px, use the favicon tile.
@@ -67,10 +72,8 @@ Sienna Dark for small text there. White text on Sienna buttons measures 4.68.
 - **Sienna top edge:** a 3px Sienna top border on cards, and a Sienna Light bar on hero panels.
 - **Corners:** angular, to match the mark. Buttons use a 4px radius; cards and panels use 6px. No pill shapes or large radii.
 
-### Voice and naming
+### Wording
 
-- Name: "Cornerstone Strategy & Integrations" on first mention in a page or section, "Cornerstone" after that.
-  "LLC" appears only in the copyright line and legal pages.
-- Primary call to action: **Request a Consultation**, the same as the contact page title. Don't use variants like
-  "Schedule a Free Consultation" or "Request a Quote" as button labels.
-- Theme: the foundation. Cornerstone helps decide what *should* be built, then builds it, as operators plus implementers.
+Page copy, headings, and button labels come from the page-build documents approved by the business partners.
+Branding work changes how copy looks, never what it says. Any new text, including eyebrow labels and diagram
+labels, needs partner approval before launch.

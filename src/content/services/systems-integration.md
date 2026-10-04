@@ -22,7 +22,7 @@ heroParagraphs:
   - "Cornerstone Strategy & Integrations helps businesses connect existing software systems using APIs, integrations, and workflow automation. We help data move between platforms, reduce duplicate entry, eliminate manual handoffs, and create more efficient business processes."
   - "Whether you need to connect a CRM to accounting software, sync e-commerce orders with inventory, automate reporting, or move data between ERP, warehouse, marketing, and operational systems, we help build the connections that make your technology work as one system."
 heroCta:
-  text: "Request a Consultation"
+  text: "Schedule a Free Consultation"
   link: "/contact/"
 
 sections:
@@ -85,14 +85,14 @@ sections:
 finalCtaHeading: "Make Your Business Systems Work Together"
 finalCtaBody: "If your business is relying on disconnected software, duplicate data entry, spreadsheets, exports, uploads, or manual handoffs, Cornerstone can help connect the systems you already use. We help businesses use APIs, workflow automation, and system integrations to move information between platforms, reduce manual work, improve data accuracy, and create more efficient operations. Schedule a free consultation to discuss your current systems, where work is being duplicated, and which connections would create the most value."
 primaryCta:
-  text: "Request a Consultation"
+  text: "Schedule a Free Consultation"
   link: "/contact/"
 secondaryCta:
   text: "Explore All Services"
   link: "/services/"
 
 internalLinks:
-  - text: "Request a Consultation"
+  - text: "Schedule a Free Consultation"
     link: "/contact/"
   - text: "Explore All Services"
     link: "/services/"

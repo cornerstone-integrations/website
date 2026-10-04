@@ -3,9 +3,10 @@
 // those base files:  node brand/make-variants.mjs
 //
 // Variants (rules in brand/README.md):
-//   *-reversed  full color for dark backgrounds: Slate -> white, Sienna -> Sienna Light
+//   *-reversed  full color for dark backgrounds: Slate -> Mist, Sienna -> Sienna Light
 //   *-white     one-color white knockout
 //   logo-horizontal-compact*  horizontal lockup without the tagline, for small sizes
+//   favicon.svg  reversed icon on a Slate tile
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
@@ -13,6 +14,7 @@ const dir = fileURLToPath(new URL('../public/brand/', import.meta.url));
 const SLATE = '#2c3a47';
 const SIENNA = '#b95827';
 const SIENNA_LIGHT = '#de7a45';
+const MIST = '#c9d1d9';
 const WHITE = '#ffffff';
 
 // Normalize line endings: the designer exports use CRLF.
@@ -23,7 +25,7 @@ const write = (name, svg) => {
 };
 const recolor = (svg, slate, sienna) =>
   svg.replaceAll(`"${SLATE}"`, `"${slate}"`).replaceAll(`"${SIENNA}"`, `"${sienna}"`);
-const reversed = (svg) => recolor(svg, WHITE, SIENNA_LIGHT);
+const reversed = (svg) => recolor(svg, MIST, SIENNA_LIGHT);
 const white = (svg) => recolor(svg, WHITE, WHITE);
 
 // Compact lockup: drop the tagline rules and glyphs, then nudge the wordmark down
@@ -59,3 +61,17 @@ write('icon-reversed.svg', reversed(icon));
 write('icon-white.svg', white(icon));
 write('logo-horizontal-compact.svg', horizontalCompact);
 write('logo-horizontal-compact-reversed.svg', reversed(horizontalCompact));
+
+// Favicon: the reversed icon, enlarged to fill a rounded Slate tile so it stays legible
+// at 16px and visible on dark browser tabs. Rasterize favicon.ico and apple-touch-icon.png from it.
+const iconPaths = reversed(icon).match(/<path [^>]*\/>/g).join('\n');
+write(
+  'favicon.svg',
+  `<svg role="img" aria-label="Cornerstone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360"><title>Cornerstone</title>
+<rect width="360" height="360" rx="56" fill="${SLATE}"/>
+<g transform="translate(180 180) scale(1.14) translate(-180 -180)">
+${iconPaths}
+</g>
+</svg>
+`,
+);

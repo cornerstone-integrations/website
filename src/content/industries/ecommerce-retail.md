@@ -28,7 +28,7 @@ heroParagraphs:
   - "Cornerstone Strategy & Integrations helps e-commerce and retail businesses build a more connected technology ecosystem. We help integrate the platforms that support online sales, inventory, orders, product data, fulfillment, accounting, pricing, shipping, and reporting so information can move more efficiently across the business."
   - "We also help improve the workflows that support product data, item pages, website SEO, pricing analysis, shipping estimates, and retail operations so your team can reduce manual work and manage growth with stronger systems."
 heroCta:
-  text: "Request a Consultation"
+  text: "Schedule a Free Consultation"
   link: "/contact/"
 
 sections:
@@ -110,7 +110,7 @@ sections:
 finalCtaHeading: "Build a Stronger E-Commerce Technology Ecosystem"
 finalCtaBody: "If your e-commerce or retail business needs better system connections, cleaner product data, stronger item pages, improved pricing visibility, or better shipping and margin analysis, Cornerstone can help. We help e-commerce and retail businesses connect their technology stack, improve product data workflows, support SEO-ready item pages, analyze pricing and shipping data, and reduce manual work across the systems that support online sales. Schedule a free consultation to discuss your current e-commerce systems, product data, pricing workflows, integrations, and opportunities for automation."
 primaryCta:
-  text: "Request a Consultation"
+  text: "Schedule a Free Consultation"
   link: "/contact/"
 secondaryCta:
   text: "Explore Our Services"

@@ -22,7 +22,7 @@ heroParagraphs:
   - "Cornerstone brings a practical background in both business leadership and complex systems work. Our founders include experience in large-scale systems integration across organizations of different sizes, along with executive and CEO-level experience building and leading companies."
   - "That combination allows us to approach technology decisions from both sides: what needs to work technically, and what needs to create value for the business."
 heroCta:
-  text: "Request a Consultation"
+  text: "Schedule a Free Consultation"
   link: "/contact/"
 
 sections:
@@ -61,14 +61,14 @@ sections:
 finalCtaHeading: "Get a Clear Technology Plan Before You Build"
 finalCtaBody: "If your business has a technology problem but the right solution is not clear, Cornerstone can help evaluate the options, define the priorities, and create a practical path forward. Schedule a free consultation to discuss your current systems, business goals, and the next technology decision your company needs to make."
 primaryCta:
-  text: "Request a Consultation"
+  text: "Schedule a Free Consultation"
   link: "/contact/"
 secondaryCta:
   text: "Explore All Services"
   link: "/services/"
 
 internalLinks:
-  - text: "Request a Consultation"
+  - text: "Schedule a Free Consultation"
     link: "/contact/"
   - text: "Explore All Services"
     link: "/services/"

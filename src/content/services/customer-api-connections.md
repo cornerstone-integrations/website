@@ -22,7 +22,7 @@ heroParagraphs:
   - "Instead of slowing down your internal team or leaving each customer or vendor to solve the connection on their own, Cornerstone helps create a faster, more consistent, and more scalable integration process."
   - "The result is quicker onboarding, clearer communication, less internal strain, and a repeatable flat-rate process for supporting customer and vendor API connections."
 heroCta:
-  text: "Request a Consultation"
+  text: "Schedule a Free Consultation"
   link: "/contact/"
 
 sections:
@@ -64,14 +64,14 @@ sections:
 finalCtaHeading: "Make API and Data Connection Onboarding Easier to Scale"
 finalCtaBody: "If your business needs a better way to support customer, vendor, supplier, or partner API connections, Cornerstone can help create a more consistent process. We act as a third-party integration partner that becomes familiar with your systems, supports outside parties through the connection process, and helps move API, data feed, connected portal, or EDI requests from interest to completion and ongoing support. Schedule a free consultation to discuss your API onboarding process, connected sales portals, EDI needs, data feeds, or other customer and vendor connection workflows."
 primaryCta:
-  text: "Request a Consultation"
+  text: "Schedule a Free Consultation"
   link: "/contact/"
 secondaryCta:
   text: "Explore All Services"
   link: "/services/"
 
 internalLinks:
-  - text: "Request a Consultation"
+  - text: "Schedule a Free Consultation"
     link: "/contact/"
   - text: "Explore All Services"
     link: "/services/"

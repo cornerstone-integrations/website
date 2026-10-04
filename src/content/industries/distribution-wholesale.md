@@ -27,7 +27,7 @@ heroParagraphs:
   - "Cornerstone Strategy & Integrations helps distribution and wholesale businesses use AI tools, workflow automation, systems integration, and API onboarding support to manage these workflows more efficiently."
   - "We help distributors improve pricing analysis, standardize product data, reduce manual spreadsheet work, connect internal systems, and support customers or retailers that need to connect to the distributor’s API."
 heroCta:
-  text: "Request a Consultation"
+  text: "Schedule a Free Consultation"
   link: "/contact/"
 
 sections:
@@ -143,7 +143,7 @@ sections:
 finalCtaHeading: "Improve the Data, Pricing, and Connections That Support Your Distribution Business"
 finalCtaBody: "If your distribution or wholesale business needs better pricing analysis, cleaner product data, more efficient workflows, or a more scalable way to onboard customer and retailer API connections, Cornerstone can help. We help distributors use AI tools, automation, systems integration, and API onboarding support to reduce manual work and improve how important business information moves across the operation. Schedule a free consultation to discuss your current distribution workflows, product data, pricing analysis, API onboarding process, and opportunities for automation."
 primaryCta:
-  text: "Request a Consultation"
+  text: "Schedule a Free Consultation"
   link: "/contact/"
 secondaryCta:
   text: "Explore Our Services"
