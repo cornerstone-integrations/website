@@ -25,7 +25,7 @@ const write = (name, svg) => {
 };
 const recolor = (svg, slate, sienna) =>
   svg.replaceAll(`"${SLATE}"`, `"${slate}"`).replaceAll(`"${SIENNA}"`, `"${sienna}"`);
-const reversed = (svg) => recolor(svg, MIST, SIENNA_LIGHT);
+const reversed = (svg) => recolor(svg, WHITE, SIENNA_LIGHT);
 const white = (svg) => recolor(svg, WHITE, WHITE);
 
 // Compact lockup: drop the tagline rules and glyphs, then nudge the wordmark down
