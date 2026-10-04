@@ -8,10 +8,10 @@
   To rebrand the site, change the values here — nothing else needs to change.
 */
 :root {
-  --color-primary: 45 58 71; /* navy #2d3a47 */
-  --color-primary-dark: 26 34 42; /* darker navy for hover/headers */
-  --color-accent: 182 84 41; /* rust orange #b65429 */
-  --color-accent-dark: 150 68 33; /* darker rust for hover */
+  --color-primary: 44 58 71; /* Slate #2C3A47 (brand guide) */
+  --color-primary-dark: 26 34 42; /* darker slate for hover/headers */
+  --color-accent: 185 88 39; /* Sienna #B95827 (brand guide) */
+  --color-accent-dark: 152 72 32; /* darker sienna for hover */
   --color-surface: 255 255 255;
   --color-surface-muted: 245 241 236; /* warm sand #f5f1ec — section backgrounds */
 }
@@ -28,7 +28,7 @@ body {
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Barlow', system-ui, -apple-system, sans-serif;
   color: rgb(var(--color-primary));
   background: rgb(var(--color-surface));
   text-rendering: optimizeLegibility;
