@@ -37,7 +37,7 @@ const isFeature = layout === 'feature';
     <div class:list={[isFeature ? 'mx-auto max-w-4xl' : 'mx-auto max-w-3xl text-center']}>
       <h2 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl">{heading}</h2>
       {intro.length > 0 && (
-        <div class="mt-4 space-y-4 text-base leading-relaxed text-stone-600">
+        <div class="mt-4 space-y-4 text-base leading-relaxed text-ink-600">
           {intro.map((p) => <p>{p}</p>)}
         </div>
       )}
@@ -53,14 +53,14 @@ const isFeature = layout === 'feature';
                 {bullets.map((b) => (
                   <li class="flex items-start gap-2.5">
                     <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                    <span class="text-sm leading-relaxed text-stone-700">{b}</span>
+                    <span class="text-sm leading-relaxed text-ink-700">{b}</span>
                   </li>
                 ))}
               </ul>
             </>
           )}
           {outro.length > 0 && (
-            <div class="mt-6 space-y-4 text-base leading-relaxed text-stone-600">
+            <div class="mt-6 space-y-4 text-base leading-relaxed text-ink-600">
               {outro.map((p) => (
                 <p>{p}</p>
               ))}
@@ -76,7 +76,7 @@ const isFeature = layout === 'feature';
           {bulletsIntro && <p class="mx-auto mt-8 max-w-2xl text-base font-semibold text-primary">{bulletsIntro}</p>}
           <ul class="mx-auto mt-4 max-w-2xl space-y-3">
             {bullets.map((b) => (
-              <li class="flex items-start gap-3 rounded-lg bg-surface-muted px-4 py-3">
+              <li class="flex items-start gap-3 rounded-md bg-surface-muted px-4 py-3">
                 <svg class="mt-0.5 h-5 w-5 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path
                     fill-rule="evenodd"
@@ -84,12 +84,12 @@ const isFeature = layout === 'feature';
                     clip-rule="evenodd"
                   />
                 </svg>
-                <span class="text-sm text-stone-700 sm:text-base">{b}</span>
+                <span class="text-sm text-ink-700 sm:text-base">{b}</span>
               </li>
             ))}
           </ul>
           {outro.length > 0 && (
-            <div class="mx-auto mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-stone-600">
+            <div class="mx-auto mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-ink-600">
               {outro.map((p) => (
                 <p>{p}</p>
               ))}
@@ -103,9 +103,9 @@ const isFeature = layout === 'feature';
       layout === 'cards' && (
         <div class:list={['mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2', cols]}>
           {items.map((item) => (
-            <div class="rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
+            <div class="rounded-md border border-ink-200 border-t-[3px] border-t-accent bg-white p-6 shadow-sm">
               <h3 class="text-lg font-semibold text-primary">{item.heading}</h3>
-              <p class="mt-2 text-sm leading-relaxed text-stone-600">{item.body}</p>
+              <p class="mt-2 text-sm leading-relaxed text-ink-600">{item.body}</p>
             </div>
           ))}
         </div>
@@ -118,7 +118,7 @@ const isFeature = layout === 'feature';
           {items.map((item) => (
             <div>
               <h3 class="text-lg font-semibold text-primary">{item.heading}</h3>
-              <p class="mt-2 text-sm leading-relaxed text-stone-600">{item.body}</p>
+              <p class="mt-2 text-sm leading-relaxed text-ink-600">{item.body}</p>
             </div>
           ))}
         </div>
@@ -129,13 +129,13 @@ const isFeature = layout === 'feature';
       layout === 'steps' && (
         <ol class="mx-auto mt-10 max-w-3xl space-y-6">
           {items.map((item, i) => (
-            <li class="flex gap-4 rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
-              <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">
+            <li class="flex gap-4 rounded-md border border-ink-200 border-t-[3px] border-t-accent bg-white p-6 shadow-sm">
+              <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-sm bg-accent font-label text-lg font-bold text-white">
                 {i + 1}
               </span>
               <div>
                 <h3 class="text-lg font-semibold text-primary">{item.heading}</h3>
-                <p class="mt-2 text-sm leading-relaxed text-stone-600">{item.body}</p>
+                <p class="mt-2 text-sm leading-relaxed text-ink-600">{item.body}</p>
               </div>
             </li>
           ))}
@@ -147,12 +147,12 @@ const isFeature = layout === 'feature';
       layout === 'process' && (
         <ol class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, i) => (
-            <li class="flex flex-col rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
-              <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">
+            <li class="flex flex-col rounded-md border border-ink-200 border-t-[3px] border-t-accent bg-white p-6 shadow-sm">
+              <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-sm bg-accent font-label text-lg font-bold text-white">
                 {i + 1}
               </span>
               <h3 class="mt-4 text-lg font-semibold text-primary">{item.heading}</h3>
-              <p class="mt-2 text-sm leading-relaxed text-stone-600">{item.body}</p>
+              <p class="mt-2 text-sm leading-relaxed text-ink-600">{item.body}</p>
             </li>
           ))}
         </ol>

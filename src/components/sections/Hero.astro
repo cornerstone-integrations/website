@@ -1,21 +1,29 @@
 ---
 import Button from '@/components/Button.astro';
+import Eyebrow from '@/components/Eyebrow.astro';
+import SystemsDiagram from '@/components/SystemsDiagram.astro';
 
 interface Props {
   title: string;
   paragraphs: string[];
   imageAlt: string;
   cta?: { text: string; link: string };
+  /** Short label above the H1, e.g. the section of the site the page belongs to. */
+  eyebrow?: string;
+  /** Systems shown in the hero diagram. Without them the panel shows the large logo icon,
+   *  which is reserved for the homepage. */
+  nodes?: string[];
 }
 
-const { title, paragraphs, imageAlt, cta } = Astro.props;
+const { title, paragraphs, imageAlt, cta, eyebrow, nodes } = Astro.props;
 ---
 
 <section class="relative overflow-hidden bg-surface-muted">
   <div class="mx-auto grid max-w-7xl gap-10 px-4 py-10 sm:px-6 sm:py-14 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-16">
     <div>
+      {eyebrow && <Eyebrow class="mb-4">{eyebrow}</Eyebrow>}
       <h1 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl lg:text-5xl">{title}</h1>
-      <div class="mt-6 space-y-4 text-base leading-relaxed text-stone-600 sm:text-lg">
+      <div class="mt-6 space-y-4 text-base leading-relaxed text-ink-600 sm:text-lg">
         {paragraphs.map((p) => <p>{p}</p>)}
       </div>
       {
@@ -26,9 +34,16 @@ const { title, paragraphs, imageAlt, cta } = Astro.props;
         )
       }
     </div>
-    <div class="relative hidden aspect-[4/3] items-center justify-center rounded-2xl bg-primary lg:flex" role="img" aria-label={imageAlt}>
-      <div class="hero-grid absolute inset-0 rounded-2xl opacity-30"></div>
-      <img src="/brand/icon-reversed.svg" alt="" width="220" height="279" class="relative h-44 w-auto drop-shadow-lg" aria-hidden="true" />
+    <div class="relative hidden aspect-[4/3] items-center justify-center overflow-hidden rounded-md bg-primary lg:flex">
+      <div class="hero-grid absolute inset-0 opacity-30"></div>
+      <div class="absolute inset-x-0 top-0 h-1 bg-accent-light"></div>
+      {
+        nodes && nodes.length > 0 ? (
+          <SystemsDiagram nodes={nodes} label={imageAlt} />
+        ) : (
+          <img src="/brand/icon-reversed.svg" alt={imageAlt} width="220" height="279" class="relative h-52 w-auto drop-shadow-lg" />
+        )
+      }
     </div>
   </div>
 </section>

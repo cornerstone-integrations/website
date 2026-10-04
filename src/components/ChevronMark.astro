@@ -1,0 +1,18 @@
+---
+// The stacked chevrons from the base of the logo icon, used as a section mark.
+// Geometry is lifted from icon.svg so it matches the logo exactly.
+interface Props {
+  /** 'dark' on Slate: white + Sienna Light, matching the reversed logo. */
+  tone?: 'light' | 'dark';
+  class?: string;
+}
+
+const { tone = 'light', class: className = '' } = Astro.props;
+const top = tone === 'dark' ? '#de7a45' : '#b95827';
+const bottom = tone === 'dark' ? '#ffffff' : '#2c3a47';
+---
+
+<svg viewBox="70 243 220 77" class:list={['h-auto', className]} aria-hidden="true" focusable="false">
+  <path transform="matrix(1,0,0,-1,180,290.3115)" d="M0 0 96.539 31.09V45.394L0 15.619-96.54 45.394V31.09Z" fill={top} />
+  <path transform="matrix(1,0,0,-1,180,297.9346)" d="M0 0 109.817 37.198V20.908L0-21.654-109.817 20.908V37.198Z" fill={bottom} />
+</svg>

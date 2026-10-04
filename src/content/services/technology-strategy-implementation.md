@@ -8,6 +8,13 @@ summary: "Have a business or operational problem you know needs to be solved, bu
 cardCtaText: "Explore Technology Strategy and Implementation Services"
 order: 3
 
+heroNodes:
+  - "Business Goals"
+  - "Workflows"
+  - "Systems"
+  - "Roadmap"
+  - "Implementation"
+  - "Support"
 heroParagraphs:
   - "Have a business problem you know needs to be solved, but you are not sure what technology solution is right?"
   - "Cornerstone Strategy & Integrations helps businesses evaluate systems, workflows, AI opportunities, automation needs, and integration challenges to define the best path forward."
@@ -15,7 +22,7 @@ heroParagraphs:
   - "Cornerstone brings a practical background in both business leadership and complex systems work. Our founders include experience in large-scale systems integration across organizations of different sizes, along with executive and CEO-level experience building and leading companies."
   - "That combination allows us to approach technology decisions from both sides: what needs to work technically, and what needs to create value for the business."
 heroCta:
-  text: "Schedule a Free Consultation"
+  text: "Request a Consultation"
   link: "/contact/"
 
 sections:
@@ -54,14 +61,14 @@ sections:
 finalCtaHeading: "Get a Clear Technology Plan Before You Build"
 finalCtaBody: "If your business has a technology problem but the right solution is not clear, Cornerstone can help evaluate the options, define the priorities, and create a practical path forward. Schedule a free consultation to discuss your current systems, business goals, and the next technology decision your company needs to make."
 primaryCta:
-  text: "Schedule a Free Consultation"
+  text: "Request a Consultation"
   link: "/contact/"
 secondaryCta:
   text: "Explore All Services"
   link: "/services/"
 
 internalLinks:
-  - text: "Schedule a Free Consultation"
+  - text: "Request a Consultation"
     link: "/contact/"
   - text: "Explore All Services"
     link: "/services/"

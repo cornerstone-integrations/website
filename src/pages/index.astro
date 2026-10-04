@@ -5,6 +5,7 @@ import Hero from '@/components/sections/Hero.astro';
 import ContentSection from '@/components/sections/ContentSection.astro';
 import FinalCta from '@/components/sections/FinalCta.astro';
 import Button from '@/components/Button.astro';
+import Eyebrow from '@/components/Eyebrow.astro';
 
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
 
@@ -25,6 +26,17 @@ const steps = [
   { heading: 'Implement the Solution', body: 'Connect systems, automate workflows, introduce AI where it creates value, and support rollout.' },
   { heading: 'Ongoing Support as Needed', body: 'Provide continued support, refinements, and additional integrations when needed.' },
 ];
+
+// Proof points. Keep these to what the site is cleared to say: no employer, partner,
+// or customer names; describe customers only as prime defense contractors and Tier 1
+// aerospace suppliers.
+const proofPoints = [
+  { stat: '10 Years', body: 'of enterprise software implementation and systems integration' },
+  { stat: '15+', body: 'manufacturing system implementations delivered' },
+  { stat: 'Aerospace & Defense', body: 'experience with prime defense contractors and Tier 1 aerospace suppliers' },
+];
+
+const platforms = ['SAP', 'Deltek Costpoint', 'Solumina', 'JD Edwards', 'Microsoft Dynamics 365', 'Custom MES'];
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -47,11 +59,12 @@ const organizationSchema = {
   structuredData={[organizationSchema]}
 >
   <Hero
-    title="Build Scalable Operations With AI, Automation, and Integrations"
+    eyebrow="AI, Automation & Systems Integration"
+    title="Build Your Operations on a Solid Foundation"
     imageAlt="AI, automation, and systems integration connecting business operations"
-    cta={{ text: 'Schedule a Free Consultation', link: '/contact/' }}
+    cta={{ text: 'Request a Consultation', link: '/contact/' }}
     paragraphs={[
-      'Cornerstone helps businesses use AI, automation, and integrations to build scalable operations. We help identify the right opportunities, create a practical roadmap, and directly implement the solutions.',
+      'Cornerstone brings together people who have run businesses and people who have implemented enterprise systems. We help you decide what should be built, then we build it, using AI, automation, and integrations that let your operations scale.',
       'We provide both technology consulting and hands-on implementation — whether you know exactly what needs to be connected or automated, or only know that your current process is not working.',
     ]}
   />
@@ -64,9 +77,9 @@ const organizationSchema = {
       <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
         {
           services.map((service) => (
-            <div class="flex flex-col rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
+            <div class="flex flex-col rounded-md border border-ink-200 border-t-[3px] border-t-accent bg-white p-6 shadow-sm">
               <h3 class="text-lg font-semibold text-primary">{service.data.navLabel}</h3>
-              <p class="mt-2 flex-1 text-sm leading-relaxed text-stone-600">{service.data.summary}</p>
+              <p class="mt-2 flex-1 text-sm leading-relaxed text-ink-600">{service.data.summary}</p>
               <Button href={`/services/${service.id}/`} variant="ghost" class="mt-4 self-start">
                 {service.data.cardCtaText ?? `Explore ${service.data.navLabel}`}
               </Button>
@@ -89,15 +102,47 @@ const organizationSchema = {
 
   <ContentSection heading="How It Works" layout="steps" items={steps} />
 
-  <section class="bg-surface-muted py-14 text-center sm:py-16">
-    <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl">A National Provider Headquartered in Lancaster, PA</h2>
-      <p class="mt-4 text-base leading-relaxed text-stone-600">
-        Cornerstone Strategy & Integrations LLC is headquartered in Lancaster, Pennsylvania, and serves businesses
-        nationwide as both a strategic consulting partner and a hands-on implementation provider.
-      </p>
-      <div class="mt-6">
-        <Button href="/resources/case-studies/" variant="ghost">View Case Studies and Examples</Button>
+  <section class="bg-surface-muted py-14 sm:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <Eyebrow align="center">Our Experience</Eyebrow>
+        <h2 class="mt-3 text-2xl font-bold tracking-tight text-primary sm:text-3xl">Experience You Can Build On</h2>
+        <p class="mt-4 text-base leading-relaxed text-ink-600">
+          Our team has connected the systems behind complex manufacturing, aerospace, and defense operations, where
+          accuracy and reliability are non-negotiable. We bring that same discipline to businesses of every size.
+        </p>
+      </div>
+
+      <dl class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+        {
+          proofPoints.map((point) => (
+            <div class="rounded-md border border-ink-200 border-t-[3px] border-t-accent bg-white p-6 text-center shadow-sm">
+              <dt class="font-display text-3xl font-bold text-accent sm:text-4xl">{point.stat}</dt>
+              <dd class="mt-2 text-sm leading-relaxed text-ink-600">{point.body}</dd>
+            </div>
+          ))
+        }
+      </dl>
+
+      <div class="mx-auto mt-10 max-w-4xl text-center">
+        <p class="font-label text-sm font-semibold uppercase tracking-[0.14em] text-ink-500">Platforms our team has integrated</p>
+        <ul class="mt-4 flex flex-wrap justify-center gap-3">
+          {
+            platforms.map((name) => (
+              <li class="rounded border border-ink-300 bg-white px-4 py-2 font-display text-base font-semibold text-primary">{name}</li>
+            ))
+          }
+        </ul>
+        <p class="mt-4 text-sm text-ink-600">
+          Connected through REST and SOAP APIs, SFTP, direct database integration, message queues, and SSIS.
+        </p>
+      </div>
+
+      <div class="mt-10 text-center">
+        <p class="text-base text-ink-600">Headquartered in Lancaster, Pennsylvania, serving businesses nationwide.</p>
+        <div class="mt-6">
+          <Button href="/about/" variant="ghost">About Cornerstone</Button>
+        </div>
       </div>
     </div>
   </section>
@@ -105,7 +150,7 @@ const organizationSchema = {
   <FinalCta
     heading="Find the Right Technology Solution for Your Business"
     body="Whether you need to connect systems, automate workflows, implement AI, simplify customer API connections, or define a broader technology roadmap, Cornerstone can help."
-    primaryCta={{ text: 'Schedule a Free Consultation', link: '/contact/' }}
+    primaryCta={{ text: 'Request a Consultation', link: '/contact/' }}
     secondaryCta={{ text: 'Learn More About How We Work', link: '/how-it-works/' }}
   />
 </BaseLayout>

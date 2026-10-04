@@ -41,9 +41,11 @@ const commonNeeds = [
   metaDescription="Cornerstone helps distribution, e-commerce, retail, 3PL, logistics, warehousing, and manufacturing companies connect systems, automate workflows, analyze data, and improve operations."
 >
   <Hero
+    eyebrow="Industries"
     title="Industries We Help With Systems Integration, AI, and Automation"
+    nodes={['Distribution', 'E-Commerce & Retail', 'Warehousing & 3PL', 'Manufacturing']}
     imageAlt="Systems integration, AI tools, workflow automation, CRM, API connections, product data, inventory, and reporting for distribution, e-commerce, 3PL, logistics, and manufacturing companies"
-    cta={{ text: 'Schedule a Free Consultation', link: '/contact/' }}
+    cta={{ text: 'Request a Consultation', link: '/contact/' }}
     paragraphs={[
       'Cornerstone Strategy & Integrations helps businesses that rely on connected systems, accurate data, and repeatable workflows improve how information moves across the company.',
       'Many businesses use multiple platforms to manage sales, inventory, pricing, product data, customer onboarding, warehouse activity, purchasing, production, reporting, and financial information. When those systems do not work together, teams spend too much time moving information manually, cleaning spreadsheets, reconciling reports, and managing disconnected workflows.',
@@ -56,7 +58,7 @@ const commonNeeds = [
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-3xl text-center">
         <h2 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl">Explore Industries We Serve</h2>
-        <p class="mt-4 text-base leading-relaxed text-stone-600">
+        <p class="mt-4 text-base leading-relaxed text-ink-600">
           Each industry has different systems, workflows, data needs, and operational priorities. Use the cards below
           to choose the industry that best matches your business and see more detailed examples.
         </p>
@@ -65,9 +67,9 @@ const commonNeeds = [
       <div class="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
         {
           industries.map((industry) => (
-            <div class="flex flex-col rounded-xl border border-stone-200 bg-white p-6 shadow-sm">
+            <div class="flex flex-col rounded-md border border-ink-200 border-t-[3px] border-t-accent bg-white p-6 shadow-sm">
               <h3 class="text-lg font-semibold text-primary">{industry.data.navLabel}</h3>
-              <p class="mt-2 text-sm leading-relaxed text-stone-600">{industry.data.summary}</p>
+              <p class="mt-2 text-sm leading-relaxed text-ink-600">{industry.data.summary}</p>
               {industry.data.focusAreas.length > 0 && (
                 <>
                   <p class="mt-4 text-sm font-semibold text-primary">Common focus areas include:</p>
@@ -75,7 +77,7 @@ const commonNeeds = [
                     {industry.data.focusAreas.map((area) => (
                       <li class="flex items-start gap-2.5">
                         <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                        <span class="text-sm leading-relaxed text-stone-700">{area}</span>
+                        <span class="text-sm leading-relaxed text-ink-700">{area}</span>
                       </li>
                     ))}
                   </ul>
@@ -104,11 +106,11 @@ const commonNeeds = [
   <section class="bg-white py-14 sm:py-16">
     <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
       <h2 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl">Choose the Industry That Matches Your Business</h2>
-      <p class="mt-4 text-base leading-relaxed text-stone-600">
+      <p class="mt-4 text-base leading-relaxed text-ink-600">
         Each industry page explains how Cornerstone applies systems integration, AI tools, workflow automation, API
         connections, CRM support, data management, and reporting to that specific business model.
       </p>
-      <p class="mt-4 text-base leading-relaxed text-stone-600">
+      <p class="mt-4 text-base leading-relaxed text-ink-600">
         Select the industry that best fits your company to see more detailed examples.
       </p>
       <div class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -126,7 +128,7 @@ const commonNeeds = [
   <FinalCta
     heading="Not Sure Where to Start?"
     body="Schedule a free consultation to discuss your current systems, workflows, data, and the technology decisions your business needs to make next."
-    primaryCta={{ text: 'Schedule a Free Consultation', link: '/contact/' }}
+    primaryCta={{ text: 'Request a Consultation', link: '/contact/' }}
     secondaryCta={{ text: 'Explore Our Services', link: '/services/' }}
   />
 </BaseLayout>

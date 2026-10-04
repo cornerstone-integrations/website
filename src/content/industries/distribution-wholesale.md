@@ -14,13 +14,20 @@ focusAreas:
   - "Retailer data feeds and customer API onboarding"
   - "Distribution systems integration and reporting"
 
+heroNodes:
+  - "ERP"
+  - "Pricing"
+  - "Product Data"
+  - "Inventory"
+  - "Purchasing"
+  - "CRM"
 heroParagraphs:
   - "Distribution and wholesale businesses rely on accurate product data, competitive pricing, inventory visibility, and strong customer and retailer connections. When those areas are managed well, the business can price more effectively, move inventory faster, support customers better, and scale without adding unnecessary administrative work."
   - "As distribution operations grow, the amount of information that needs to be managed grows with them. Pricing teams need to understand margin, sales velocity, competitor movement, and inventory turns. Operations teams need reliable stock status and item data. Sales and customer teams need accurate product information, current availability, customer-specific pricing, and a clear process for onboarding retailer or customer connections."
   - "Cornerstone Strategy & Integrations helps distribution and wholesale businesses use AI tools, workflow automation, systems integration, and API onboarding support to manage these workflows more efficiently."
   - "We help distributors improve pricing analysis, standardize product data, reduce manual spreadsheet work, connect internal systems, and support customers or retailers that need to connect to the distributor’s API."
 heroCta:
-  text: "Schedule a Free Consultation"
+  text: "Request a Consultation"
   link: "/contact/"
 
 sections:
@@ -136,7 +143,7 @@ sections:
 finalCtaHeading: "Improve the Data, Pricing, and Connections That Support Your Distribution Business"
 finalCtaBody: "If your distribution or wholesale business needs better pricing analysis, cleaner product data, more efficient workflows, or a more scalable way to onboard customer and retailer API connections, Cornerstone can help. We help distributors use AI tools, automation, systems integration, and API onboarding support to reduce manual work and improve how important business information moves across the operation. Schedule a free consultation to discuss your current distribution workflows, product data, pricing analysis, API onboarding process, and opportunities for automation."
 primaryCta:
-  text: "Schedule a Free Consultation"
+  text: "Request a Consultation"
   link: "/contact/"
 secondaryCta:
   text: "Explore Our Services"

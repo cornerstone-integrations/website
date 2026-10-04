@@ -1,0 +1,29 @@
+---
+// Small label above a heading, built from the logo's "— STRATEGY & INTEGRATIONS —"
+// lockup: Sienna rules around condensed uppercase text. Centered labels get a rule
+// on both sides like the logo; left-aligned labels get a leading rule only.
+interface Props {
+  align?: 'left' | 'center';
+  /** 'dark' when the label sits on Slate, so it switches to Sienna Light. */
+  tone?: 'light' | 'dark';
+  class?: string;
+}
+
+const { align = 'left', tone = 'light', class: className = '' } = Astro.props;
+// Sienna Dark keeps small text above 4.5:1 on both white and Sand.
+const color = tone === 'dark' ? 'text-accent-light' : 'text-accent-dark';
+const rule = tone === 'dark' ? 'bg-accent-light' : 'bg-accent';
+---
+
+<p
+  class:list={[
+    'flex items-center gap-3 font-label text-sm font-semibold uppercase tracking-[0.14em]',
+    align === 'center' && 'justify-center',
+    color,
+    className,
+  ]}
+>
+  <span class:list={['h-0.5 w-8 shrink-0', rule]} aria-hidden="true"></span>
+  <span><slot /></span>
+  {align === 'center' && <span class:list={['h-0.5 w-8 shrink-0', rule]} aria-hidden="true" />}
+</p>

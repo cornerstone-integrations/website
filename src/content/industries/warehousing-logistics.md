@@ -14,13 +14,20 @@ focusAreas:
   - "Customer API connections and data feeds"
   - "Warehouse, inventory, fulfillment, billing, and reporting workflows"
 
+heroNodes:
+  - "WMS"
+  - "TMS"
+  - "CRM"
+  - "Onboarding"
+  - "Billing"
+  - "Reporting"
 heroParagraphs:
   - "Connect the sales platforms, ERP systems, CRM tools, SaaS programs, warehouse systems, and customer connections that support your 3PL operation."
   - "Cornerstone Strategy & Integrations helps 3PL companies, warehousing businesses, and logistics providers build a more connected technology foundation. We connect sales platforms to ERP systems, integrate SaaS programs with one another, implement and support CRM platforms, and automate workflows across the systems that support sales, onboarding, operations, fulfillment, billing, and reporting."
   - "We also act as a third-party integration partner for 3PL customer connections. Cornerstone helps customers connect to your systems, manages the technical onboarding process, supports API and data connection maintenance, and gives both the provider and the customer a verified point of contact who understands integration workflows."
   - "The result is a stronger technology ecosystem that helps your 3PL reduce manual work, improve customer onboarding, support cleaner data flow, and scale without forcing sales or operations teams to manage every technical connection."
 heroCta:
-  text: "Schedule a Free Consultation"
+  text: "Request a Consultation"
   link: "/contact/"
 
 sections:
@@ -106,7 +113,7 @@ sections:
 finalCtaHeading: "Build a Better Technology Ecosystem for Your 3PL Operation"
 finalCtaBody: "If your 3PL, warehousing, or logistics business needs stronger system connections, better CRM workflows, cleaner customer onboarding, or a more scalable way to support API connections, Cornerstone can help. We help 3PL companies connect sales platforms, ERP systems, CRM tools, warehouse systems, customer platforms, reporting dashboards, and SaaS programs. We also support customer API onboarding and connection maintenance so your team can stay focused on operations, fulfillment, service, and growth. Schedule a free consultation to discuss your current systems, CRM workflows, customer connection process, and opportunities to improve your 3PL technology stack."
 primaryCta:
-  text: "Schedule a Free Consultation"
+  text: "Request a Consultation"
   link: "/contact/"
 secondaryCta:
   text: "Explore Our Services"

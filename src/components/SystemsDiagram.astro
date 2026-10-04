@@ -1,0 +1,60 @@
+---
+// Hero illustration for interior pages: the systems a page talks about, arranged
+// around the Cornerstone icon as the hub that connects them. Drawn as inline SVG
+// so each page gets its own labels without needing bespoke artwork.
+interface Props {
+  nodes: string[];
+  label: string;
+}
+
+const { nodes, label } = Astro.props;
+
+const W = 480;
+const H = 360;
+const cx = W / 2;
+const cy = H / 2;
+const rx = 168;
+const ry = 124;
+
+// Spread nodes evenly around an ellipse, starting at the top-left so two labels
+// never stack directly above and below the hub.
+const placed = nodes.slice(0, 8).map((text, i, all) => {
+  const angle = -Math.PI / 2 + Math.PI / all.length + (i * 2 * Math.PI) / all.length;
+  // Barlow Condensed caps run about 7.4px per character at 13px.
+  const w = Math.round(text.length * 7.4 + 24);
+  // Keep long labels inside the panel.
+  const x = Math.min(Math.max(cx + rx * Math.cos(angle), w / 2 + 10), W - w / 2 - 10);
+  const y = cy + ry * Math.sin(angle);
+  return { text, x, y, w };
+});
+---
+
+<svg viewBox={`0 0 ${W} ${H}`} class="relative h-full w-full" role="img" aria-label={label}>
+  {
+    placed.map((n) => (
+      <line x1={cx} y1={cy} x2={n.x} y2={n.y} stroke="#de7a45" stroke-width="1.5" stroke-dasharray="4 5" opacity="0.8" />
+    ))
+  }
+  <circle cx={cx} cy={cy} r="54" fill="#1a222a" stroke="#de7a45" stroke-width="2" />
+  <image href="/brand/icon-reversed.svg" x={cx - 30} y={cy - 38} width="60" height="76" />
+  {
+    placed.map((n) => (
+      <g>
+        <rect x={n.x - n.w / 2} y={n.y - 15} width={n.w} height="30" rx="3" fill="#1a222a" stroke="#ffffff" stroke-opacity="0.35" />
+        <rect x={n.x - n.w / 2} y={n.y - 15} width="3" height="30" fill="#de7a45" />
+        <text
+          x={n.x + 1}
+          y={n.y + 4.5}
+          text-anchor="middle"
+          fill="#ffffff"
+          font-family="'Barlow Condensed', Barlow, sans-serif"
+          font-size="13"
+          font-weight="600"
+          letter-spacing="0.08em"
+        >
+          {n.text.toUpperCase()}
+        </text>
+      </g>
+    ))
+  }
+</svg>

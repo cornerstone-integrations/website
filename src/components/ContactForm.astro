@@ -1,6 +1,6 @@
 ---
 const inputClass =
-  'mt-1.5 w-full rounded-md border border-stone-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent';
+  'mt-1.5 w-full rounded-md border border-ink-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent';
 
 const timingOptions = ['ASAP', 'Within 30 Days', 'Within 60-90 Days', 'Within 3-6 Months', 'Planning / Exploring'];
 ---
@@ -49,7 +49,7 @@ const timingOptions = ['ASAP', 'Within 30 Days', 'Within 60-90 Days', 'Within 3-
       <div class="mt-2 space-y-2">
         {
           timingOptions.map((option, i) => (
-            <label class="flex items-center gap-2.5 text-sm text-stone-700">
+            <label class="flex items-center gap-2.5 text-sm text-ink-700">
               <input
                 type="radio"
                 id={`timing-${i}`}
@@ -73,7 +73,7 @@ const timingOptions = ['ASAP', 'Within 30 Days', 'Within 60-90 Days', 'Within 3-
 
     <button
       type="submit"
-      class="inline-flex w-full items-center justify-center rounded-md bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-dark disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+      class="inline-flex w-full items-center justify-center rounded bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-dark disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
     >
       Request a Consultation
     </button>
@@ -81,9 +81,9 @@ const timingOptions = ['ASAP', 'Within 30 Days', 'Within 60-90 Days', 'Within 3-
     <p id="contact-form-status" class="text-sm" role="status"></p>
   </form>
 
-  <div id="contact-form-confirmation" class="hidden rounded-xl border border-stone-200 bg-surface-muted p-8" tabindex="-1">
+  <div id="contact-form-confirmation" class="hidden rounded-md border border-ink-200 border-t-[3px] border-t-accent bg-surface-muted p-8" tabindex="-1">
     <h3 class="text-xl font-semibold text-primary">Thank You for Contacting Cornerstone</h3>
-    <p class="mt-3 text-base leading-relaxed text-stone-600">
+    <p class="mt-3 text-base leading-relaxed text-ink-600">
       Your consultation request has been received. A member of the Cornerstone Strategy &amp; Integrations team will
       review the information provided and follow up regarding your needs and appropriate next steps.
     </p>
@@ -102,7 +102,7 @@ const timingOptions = ['ASAP', 'Within 30 Days', 'Within 60-90 Days', 'Within 3-
     const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
     submitButton?.setAttribute('disabled', 'true');
     status.textContent = 'Sending...';
-    status.className = 'text-sm text-stone-500';
+    status.className = 'text-sm text-ink-500';
 
     try {
       const response = await fetch('/api/contact', { method: 'POST', body: new FormData(form) });

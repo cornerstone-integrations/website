@@ -19,6 +19,8 @@ interface Props {
   seoTitle: string;
   metaDescription: string;
   heroImageAlt: string;
+  heroEyebrow?: string;
+  heroNodes?: string[];
   heroParagraphs: string[];
   heroCta: { text: string; link: string };
   sections: Section[];
@@ -34,6 +36,8 @@ const {
   seoTitle,
   metaDescription,
   heroImageAlt,
+  heroEyebrow,
+  heroNodes,
   heroParagraphs,
   heroCta,
   sections,
@@ -46,7 +50,14 @@ const {
 ---
 
 <BaseLayout seoTitle={seoTitle} metaDescription={metaDescription} structuredData={structuredData}>
-  <Hero title={title} paragraphs={heroParagraphs} imageAlt={heroImageAlt} cta={heroCta} />
+  <Hero
+    title={title}
+    eyebrow={heroEyebrow}
+    nodes={heroNodes}
+    paragraphs={heroParagraphs}
+    imageAlt={heroImageAlt}
+    cta={heroCta}
+  />
 
   <slot name="before-sections" />
 

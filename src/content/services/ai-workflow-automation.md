@@ -8,13 +8,20 @@ summary: "Use practical AI where it creates real business value. Cornerstone hel
 cardCtaText: "Explore AI Tools and Implementation Services"
 order: 1
 
+heroNodes:
+  - "Data Analysis"
+  - "Reporting"
+  - "Documents"
+  - "Data Cleanup"
+  - "Decision Support"
+  - "Workflows"
 heroParagraphs:
   - "Use AI where it creates real business value, not just because it is the latest technology trend."
   - "AI can help businesses analyze data faster, clean and organize information, identify trends, summarize large data sets, replace repetitive manual tasks, and improve recurring workflows. But AI only creates value when it is applied to the right business problem."
   - "Cornerstone Strategy & Integrations helps businesses identify, design, and implement AI tools, skills, and workflows that improve real operations. We focus on practical use cases such as data analysis, data cleanup, reporting, workflow automation, manual task replacement, and decision support."
   - "Instead of starting with the technology, we start with the business process. We help determine where AI can save time, improve consistency, reduce manual spreadsheet work, support better decisions, or create more capacity across the business."
 heroCta:
-  text: "Schedule a Free Consultation"
+  text: "Request a Consultation"
   link: "/contact/"
 
 sections:
@@ -68,14 +75,14 @@ sections:
 finalCtaHeading: "Identify Where AI Can Create the Greatest Value in Your Business"
 finalCtaBody: "The best AI opportunities are different for every company. Cornerstone helps evaluate your workflows, data, manual processes, and recurring tasks to identify where AI tools and skills can create practical business value. Schedule a free consultation to discuss where AI implementation could improve data analysis, data cleanup, repetitive task replacement, reporting, and operational efficiency in your business."
 primaryCta:
-  text: "Schedule a Free Consultation"
+  text: "Request a Consultation"
   link: "/contact/"
 secondaryCta:
   text: "Explore All Services"
   link: "/services/"
 
 internalLinks:
-  - text: "Schedule a Free Consultation"
+  - text: "Request a Consultation"
     link: "/contact/"
   - text: "Explore All Services"
     link: "/services/"

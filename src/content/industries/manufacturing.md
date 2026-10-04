@@ -14,13 +14,20 @@ focusAreas:
   - "Material handling and replenishment workflows"
   - "AI-supported analysis for trends and cost savings"
 
+heroNodes:
+  - "ERP"
+  - "MES"
+  - "Inventory"
+  - "Materials"
+  - "Production"
+  - "Quality"
 heroParagraphs:
   - "Connect the systems, material data, and production workflows that help your manufacturing operation run more efficiently."
   - "Manufacturing companies depend on accurate information across raw materials, components, inventory, purchasing, production schedules, work orders, labor, equipment, finished goods, and reporting. When that information is organized and connected, teams can plan better, reduce unnecessary manual work, and manage complex builds with clearer visibility."
   - "Cornerstone Strategy & Integrations helps manufacturers connect the systems that support raw material planning, component tracking, inventory visibility, purchasing, material handling, production workflows, reporting, and operational decision-making."
   - "We help manufacturing companies use systems integration, workflow automation, AI-supported analysis, and technology strategy to improve how data moves through the business and how teams manage the many inputs required for production."
 heroCta:
-  text: "Schedule a Free Consultation"
+  text: "Request a Consultation"
   link: "/contact/"
 
 sections:
@@ -106,7 +113,7 @@ sections:
 finalCtaHeading: "Build a More Connected Technology Foundation for Your Manufacturing Operation"
 finalCtaBody: "If your manufacturing company needs better system connections, cleaner material data, stronger inventory visibility, improved production workflows, or more efficient analysis, Cornerstone can help. We help manufacturers connect ERP, MRP, inventory, purchasing, production, material handling, accounting, and reporting systems so teams can reduce manual work and manage complex builds with better information. Schedule a free consultation to discuss your current systems, material workflows, production data, reporting needs, and opportunities to improve your manufacturing technology stack."
 primaryCta:
-  text: "Schedule a Free Consultation"
+  text: "Request a Consultation"
   link: "/contact/"
 secondaryCta:
   text: "Explore Our Services"

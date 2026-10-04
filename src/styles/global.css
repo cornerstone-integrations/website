@@ -6,14 +6,26 @@
   Brand color tokens. Values are "R G B" triples (no commas) so Tailwind's
   rgb(var(--x) / <alpha-value>) pattern can apply opacity modifiers like bg-primary/10.
   To rebrand the site, change the values here — nothing else needs to change.
+  Usage rules for every token live in brand/README.md.
 */
 :root {
   --color-primary: 44 58 71; /* Slate #2C3A47 (brand guide) */
-  --color-primary-dark: 26 34 42; /* darker slate for hover/headers */
+  --color-primary-dark: 26 34 42; /* Deep Slate #1A222A — footer and darkest surfaces */
   --color-accent: 185 88 39; /* Sienna #B95827 (brand guide) */
-  --color-accent-dark: 152 72 32; /* darker sienna for hover */
+  --color-accent-dark: 152 72 32; /* Sienna Dark #984820 — hover, small Sienna text on Sand */
+  --color-accent-light: 222 122 69; /* Sienna Light #DE7A45 — Sienna on dark backgrounds only */
   --color-surface: 255 255 255;
-  --color-surface-muted: 245 241 236; /* warm sand #f5f1ec — section backgrounds */
+  --color-surface-muted: 245 241 236; /* Sand #F5F1EC — alternate section background */
+
+  /* Ink: neutral grays tinted from Slate, so text and borders stay in the brand's cool family. */
+  --color-ink-50: 244 245 246;
+  --color-ink-100: 234 235 237;
+  --color-ink-200: 217 220 222;
+  --color-ink-300: 187 192 196;
+  --color-ink-400: 150 156 163;
+  --color-ink-500: 99 109 119;
+  --color-ink-600: 78 90 100;
+  --color-ink-700: 57 70 82;
 }
 
 * {
@@ -32,4 +44,11 @@ body {
   color: rgb(var(--color-primary));
   background: rgb(var(--color-surface));
   text-rendering: optimizeLegibility;
+}
+
+/* Headings use Barlow Semi Condensed so they echo the condensed logo wordmark. */
+h1,
+h2,
+h3 {
+  font-family: 'Barlow Semi Condensed', 'Barlow', system-ui, sans-serif;
 }
