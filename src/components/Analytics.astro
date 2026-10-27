@@ -1,0 +1,63 @@
+---
+/**
+ * Umami analytics (self-hosted on the Cornerstone VPS, COR-41). Cookieless and stores no
+ * personal data, so no consent banner. Scripts load first-party from /_cs/, which vercel.json
+ * rewrites to analytics.cornerstoneintegrations.com, so ad blockers' third-party rules don't hide
+ * visits.
+ *
+ * Picked at build time from Vercel's system env vars: production builds report to the production
+ * website, the `staging` branch to its own website, and every other build (other previews, local
+ * dev) gets no tracker at all. data-domains is a second guard if a build is served elsewhere.
+ * Website IDs are public (they're in the page source anyway).
+ */
+const sites = {
+  production: {
+    id: '0d966ff3-0205-4ea5-b4de-f254992cc031',
+    domains: 'cornerstoneintegrations.com,www.cornerstoneintegrations.com',
+  },
+  staging: {
+    id: 'b59e6d0b-11f6-4699-8b72-6c6596ad5921',
+    domains: 'staging.cornerstoneintegrations.com',
+  },
+};
+
+const site =
+  process.env.VERCEL_ENV === 'production'
+    ? sites.production
+    : process.env.VERCEL_GIT_COMMIT_REF === 'staging'
+      ? sites.staging
+      : undefined;
+---
+
+{
+  site && (
+    <>
+      <script
+        is:inline
+        defer
+        src="/_cs/cs.js"
+        data-website-id={site.id}
+        data-domains={site.domains}
+        data-performance="true"
+      />
+      {/*
+        Session replays and heatmaps. Inputs are masked (mask level "moderate", set per website in
+        Umami). The recorder has no data-domains option and ignores umami.disabled, so it's added
+        only on the site's own hostnames and only when the tracker isn't switched off.
+      */}
+      <script is:inline define:vars={{ id: site.id, domains: site.domains.split(',') }}>
+        let disabled = false;
+        try {
+          disabled = !!localStorage.getItem('umami.disabled');
+        } catch {}
+        if (domains.includes(location.hostname) && !disabled) {
+          const s = document.createElement('script');
+          s.defer = true;
+          s.src = '/_cs/recorder.js';
+          s.dataset.websiteId = id;
+          document.head.appendChild(s);
+        }
+      </script>
+    </>
+  )
+}

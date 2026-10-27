@@ -29,7 +29,7 @@ const { title, paragraphs, imageAlt, cta, eyebrow, nodes } = Astro.props;
       {
         cta && (
           <div class="mt-8">
-            <Button href={cta.link}>{cta.text}</Button>
+            <Button href={cta.link} location="hero">{cta.text}</Button>
           </div>
         )
       }

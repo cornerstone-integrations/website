@@ -1,6 +1,7 @@
 ---
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
+import Analytics from '@/components/Analytics.astro';
 import '@/styles/global.css';
 
 interface Props {
@@ -49,6 +50,7 @@ const ogImageURL = new URL('/brand/og-image.png', Astro.site);
     <meta name="twitter:card" content="summary_large_image" />
 
     {structuredData.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} is:inline />)}
+    <Analytics />
   </head>
   <body class="flex min-h-screen flex-col antialiased">
     <Header />
