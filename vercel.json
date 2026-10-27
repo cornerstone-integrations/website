@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/_cs/cs.js", "destination": "https://analytics.cornerstoneintegrations.com/cs.js" },
+    { "source": "/_cs/recorder.js", "destination": "https://analytics.cornerstoneintegrations.com/recorder.js" },
+    { "source": "/_cs/api/cs", "destination": "https://analytics.cornerstoneintegrations.com/api/cs" },
+    { "source": "/_cs/api/record", "destination": "https://analytics.cornerstoneintegrations.com/api/record" },
+    {
+      "source": "/_cs/api/websites/:id/recorder",
+      "destination": "https://analytics.cornerstoneintegrations.com/api/websites/:id/recorder"
+    }
+  ]
+}

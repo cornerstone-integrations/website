@@ -3,9 +3,11 @@ interface Props {
   href: string;
   variant?: 'primary' | 'secondary' | 'ghost';
   class?: string;
+  /** Where the button sits, for the `cta-click` analytics event, e.g. "hero" or "header". */
+  location?: string;
 }
 
-const { href, variant = 'primary', class: className = '' } = Astro.props;
+const { href, variant = 'primary', class: className = '', location } = Astro.props;
 
 const variants: Record<string, string> = {
   primary: 'bg-accent text-white hover:bg-accent-dark',
@@ -21,6 +23,9 @@ const variants: Record<string, string> = {
     variants[variant],
     className,
   ]}
+  data-umami-event="cta-click"
+  data-umami-event-target={href}
+  data-umami-event-location={location}
 >
   <slot />
 </a>
